@@ -30,9 +30,16 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-racing font-bold text-xl tracking-wider">
-            SM<span className="text-accent">.</span>
-          </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/public/profile-photo.png"
+                alt="Profile"
+                className="w-10 h-10 rounded-full border-2 border-accent shadow-md object-cover"
+              />
+              <div className="font-racing font-bold text-xl tracking-wider">
+                SM21<span className="text-accent">.</span>
+              </div>
+            </div>
           
           <div className="hidden md:flex items-center space-x-8">
             <button

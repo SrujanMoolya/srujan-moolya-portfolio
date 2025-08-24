@@ -39,7 +39,14 @@ const About = () => {
   return (
     <section id="about" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-6">
+              <img
+                src="/public/profile-photo.png"
+                alt="Profile"
+                className="w-28 h-28 rounded-full border-4 border-accent shadow-lg object-cover"
+              />
+            </div>
           <h2 className="text-4xl md:text-5xl font-racing font-bold mb-6">
             About <span className="text-accent">Me</span>
           </h2>

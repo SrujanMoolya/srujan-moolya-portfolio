@@ -21,8 +21,15 @@ const Footer = () => {
             </Button>
           </div>
           
-          <div className="font-racing font-bold text-2xl tracking-wider">
-            SM<span className="text-accent">.</span>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src="/public/profile-photo.png"
+              alt="Profile"
+              className="w-12 h-12 rounded-full border-2 border-accent shadow object-cover"
+            />
+            <div className="font-racing font-bold text-2xl tracking-wider">
+              SM21<span className="text-accent">.</span>
+            </div>
           </div>
           
           <p className="font-professional text-muted-foreground max-w-md">
