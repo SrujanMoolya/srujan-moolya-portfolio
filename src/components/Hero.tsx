@@ -78,7 +78,7 @@ const Hero = () => {
           <div className="space-y-4">
             <h1 className="text-6xl md:text-8xl font-racing font-bold tracking-wider">
               SRUJAN
-              <span className="block text-accent">MOOLYA21</span>
+              <span className="block text-accent">MOOLYA</span>
             </h1>
             
             <div className="text-xl md:text-2xl font-professional text-muted-foreground h-8">
