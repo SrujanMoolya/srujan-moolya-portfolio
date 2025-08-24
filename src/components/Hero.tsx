@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Mail } from "lucide-react";
+import f1Car from "@/assets/f1-car.png";
+import motogpBike from "@/assets/motogp-bike.png";
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState("");
@@ -52,6 +54,16 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* F1 Car */}
+        <div className="absolute top-1/2 -left-20 transform -translate-y-1/2 opacity-10 animate-float">
+          <img src={f1Car} alt="F1 Car" className="h-32 w-auto" />
+        </div>
+        
+        {/* MotoGP Bike */}
+        <div className="absolute top-1/3 -right-20 transform -translate-y-1/2 opacity-10 animate-float-delayed">
+          <img src={motogpBike} alt="MotoGP Bike" className="h-24 w-auto" />
+        </div>
       </div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
