@@ -63,6 +63,23 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				'racing': ['Orbitron', 'monospace'],
+				'professional': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-speed': 'var(--gradient-speed)',
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+			},
+			boxShadow: {
+				'speed': 'var(--shadow-speed)',
+				'lift': 'var(--shadow-lift)',
+				'glow': 'var(--shadow-glow)',
+			},
+			transitionTimingFunction: {
+				'f1': 'cubic-bezier(0.4, 0, 0.2, 1)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
