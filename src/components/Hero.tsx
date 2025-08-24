@@ -61,7 +61,7 @@ const Hero = () => {
         </div>
         
         {/* MotoGP Bike */}
-        <div className="absolute top-1/3 -right-20 transform -translate-y-1/2 opacity-10 animate-float-delayed">
+        <div className="absolute top-1/3 -right-10 transform -translate-y-1/2 opacity-10 animate-float-delayed">
           <img src={motogpBike} alt="MotoGP Bike" className="h-24 w-auto" />
         </div>
       </div>
