@@ -23,7 +23,7 @@ const Footer = () => {
           
           <div className="flex flex-col items-center gap-2">
             <img
-              src="/public/profile-photo.png"
+              src="/public/profilephoto.png"
               alt="Profile"
               className="w-12 h-12 rounded-full border-2 border-accent shadow object-cover"
             />

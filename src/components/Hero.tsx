@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-up">
             <div className="flex justify-center mb-4">
               <img
-                src="/public/profile-photo.png"
+                src="/public/profilephoto.png"
                 alt="Profile"
                 className="w-32 h-32 rounded-full border-4 border-accent shadow-lg object-cover"
               />
