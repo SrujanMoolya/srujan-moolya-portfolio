@@ -65,8 +65,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="h-screen flex items-center justify-center bg-muted/30 snap-start">
+      <div className="container mx-auto px-4 md:px-6 py-12 max-h-screen overflow-y-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-racing font-bold mb-6">
             Let's <span className="text-accent">Connect</span>

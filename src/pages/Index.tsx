@@ -9,17 +9,17 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background scroll-smooth">
       <Header />
-      <main>
+      <main className="snap-y snap-mandatory">
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Experience />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };
