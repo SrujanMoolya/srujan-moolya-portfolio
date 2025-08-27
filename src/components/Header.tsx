@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img
-                src="/public/profilephoto.png"
+               src="/srujanMoolya.jpg"
                 alt="Profile"
                 className="w-10 h-10 rounded-full border-2 border-accent shadow-md object-cover"
               />

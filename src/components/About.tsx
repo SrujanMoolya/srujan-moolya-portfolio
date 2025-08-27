@@ -42,7 +42,7 @@ const About = () => {
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
               <img
-                src="/public/profilephoto.png"
+               src="/srujanMoolya.jpg"
                 alt="Profile"
                 className="w-28 h-28 rounded-full border-4 border-accent shadow-lg object-cover"
               />

@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Mail } from "lucide-react";
 import f1Car from "@/assets/f1-car.png";
 import motogpBike from "@/assets/motogp-bike.png";
+// Profile photo is used via public path in <img src="/profile-photo.png" ... />
+
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState("");
@@ -70,7 +72,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-up">
             <div className="flex justify-center mb-4">
               <img
-                src="/public/profilephoto.png"
+                src="/srujanMoolya.jpg"
                 alt="Profile"
                 className="w-32 h-32 rounded-full border-4 border-accent shadow-lg object-cover"
               />
