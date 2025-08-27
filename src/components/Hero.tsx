@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="h-screen flex items-center justify-center relative overflow-hidden snap-start">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>

@@ -7,8 +7,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="h-screen flex items-center justify-center bg-primary text-primary-foreground snap-start">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-primary text-primary-foreground py-12">
+      <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center space-y-6">
           <div className="flex items-center justify-center">
             <Button
