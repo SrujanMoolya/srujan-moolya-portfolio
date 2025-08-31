@@ -5,7 +5,7 @@ import { Building, Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      company: "Swaap Innovations",
+      company: "Svvaap Innovations",
       role: "Software Engineer",
       type: "Startup",
       location: "Bangalore, India",
@@ -39,15 +39,15 @@ const Experience = () => {
   const education = [
     {
       degree: "MCA (Master of Computer Applications)",
-      institution: "Presidency Institute for Management",
+      institution: "poornaprajna Institute for Management",
       location: "Udupi, Karnataka",
       duration: "2019 - 2021",
       description: "Advanced studies in computer applications with focus on software development and emerging technologies."
     },
     {
       degree: "BCA (Bachelor of Computer Application)",
-      institution: "St. Aloysius College",
-      location: "Mangalore, Karnataka", 
+      institution: "St. Marys College",
+      location: "Shirva, Karnataka", 
       duration: "2016 - 2019",
       description: "Comprehensive foundation in computer science principles and programming fundamentals."
     },

@@ -77,28 +77,7 @@ const About = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-racing font-bold mb-4">
-              Target <span className="text-accent">Companies</span>
-            </h3>
-            <p className="text-muted-foreground font-professional mb-6">
-              Ready to contribute to world-class organizations
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Google", "Microsoft", "OpenAI", "Meta", "Apple", "Tesla", "Netflix", "Amazon"].map((company) => (
-              <Badge 
-                key={company}
-                variant="outline" 
-                className="px-4 py-2 text-sm font-professional racing-border hover-lift cursor-default"
-              >
-                {company}
-              </Badge>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </section>
   );
