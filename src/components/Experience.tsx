@@ -6,9 +6,9 @@ const Experience = () => {
   const experiences = [
     {
       company: "Svvaap Innovations",
-      role: "Software Engineer",
+      role: "Freelance Software Engineer",
       type: "Startup",
-      location: "Bangalore, India",
+      location: "Udupi, India",
       duration: "Apr 2021 - Present",
       description: "Leading full-stack development initiatives, focusing on innovative web applications and solving real-world problems through technology.",
       achievements: [
@@ -21,10 +21,10 @@ const Experience = () => {
     },
     {
       company: "Chipsy IT",
-      role: "Software Engineer Intern",
+      role: "Web Developer Intern",
       type: "Internship",
       location: "Remote",
-      duration: "Jan 2021 - Mar 2021",
+      duration: "Jan 2024 - Mar 2024",
       description: "Gained hands-on experience in software development lifecycle and contributed to various client projects.",
       achievements: [
         "Built responsive web applications from scratch",
@@ -41,21 +41,23 @@ const Experience = () => {
       degree: "MCA (Master of Computer Applications)",
       institution: "poornaprajna Institute for Management",
       location: "Udupi, Karnataka",
-      duration: "2019 - 2021",
+      duration: "2024 - 2026",
+      percentage : "8.00",
       description: "Advanced studies in computer applications with focus on software development and emerging technologies."
     },
     {
       degree: "BCA (Bachelor of Computer Application)",
       institution: "St. Marys College",
       location: "Shirva, Karnataka", 
-      duration: "2016 - 2019",
+      duration: "2021 - 2024",
+        percentage : "8.04",
       description: "Comprehensive foundation in computer science principles and programming fundamentals."
     },
     {
       degree: "12th Commerce (Computer Science)",
       institution: "St. Cecily's PU College",
       location: "Udupi, Karnataka",
-      duration: "2014 - 2016",
+      duration: "2020 - 2021",
       description: "Early exposure to computer science alongside commerce fundamentals."
     }
   ];

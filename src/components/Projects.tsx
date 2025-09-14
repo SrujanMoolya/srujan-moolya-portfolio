@@ -2,62 +2,129 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Play } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
   const projects = [
+       {
+      title: "Createx - Idea to Code",
+  description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "createx.svvaap.in",
+        github: "#"
+      }
+    },
     {
-      title: "Job Portal Platform",
-      description: "A comprehensive job portal connecting job seekers with recruiters. Features real-time messaging, advanced filtering, and intelligent matching algorithms.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "JWT"],
+      title: "Digital Menu System [P.O.S]",
+  description: "Menucraft: a modern digital POS and menu management system with AI-assisted menu optimization, online ordering, and admin dashboard. Integrates website ordering with real-time inventory tracking and analytics.",
+      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase","postgrdSql"],
       type: "Web Development",
       status: "Live",
       links: {
-        demo: "#",
+        demo: "menucraft.in",
+        github: "#"
+      }
+    },
+    {
+      title: "Job Portal Platform",
+  description: "A full-featured job marketplace connecting candidates with recruiters. Includes intelligent matching, real-time chat, resume parsing, and advanced filtering to surface the best opportunities for both job seekers and employers.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Node.js", "Firebase"],
+      type: "Web Development",
+      status: "Live",
+      links: {
+        demo: "jobhunt4u.in",
+        github: "#"
+      }
+    },
+       {
+      title: "PIM-Hostel Managemnt Syatem",
+  description: "Customized hostel management solution built for academic institutions — handles student allocation, fee management, attendance, and maintenance requests with role-based access for admins and staff.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "pimhostel.svvaap.in",
+        github: "#"
+      }
+    },
+     {
+      title: "TrackMyBus",
+  description: "TrackMyBus provides real-time bus location tracking, ETA predictions, and route notifications. Designed for low-bandwidth environments and includes driver sign-in, live ETA push notifications, and route analytics.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "mybustime.svvaap.in",
         github: "#"
       }
     },
     {
       title: "Real Estate Platform",
-      description: "Modern real estate platform with property listings, virtual tours, and advanced search capabilities. Responsive design with seamless user experience.",
+  description: "A modern real-estate portal with searchable property listings, virtual tours, seller dashboards, and advanced filters for location, price, and amenities. Optimized for fast search and mobile-first browsing.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Firebase", "Maps API", "Tailwind CSS"],
+      technologies: ["React.js", "Firebase", "Tailwind CSS"],
       type: "Web Development", 
       status: "Live",
       links: {
-        demo: "#",
+        demo: "a2zpremiumdeals.com",
         github: "#"
       }
     },
-    {
-      title: "Food Delivery App",
-      description: "Full-stack food delivery application with real-time order tracking, payment integration, and restaurant management system.",
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
-      technologies: ["Flutter", "Node.js", "PostgreSQL", "Stripe", "Firebase"],
-      type: "App Development",
-      status: "In Development",
-      links: {
-        demo: "#",
-        github: "#"
-      }
-    },
-    {
-      title: "Digital Menu System",
-      description: "React-based digital menu management system for restaurants with QR code integration and real-time updates.",
-      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
-      technologies: ["React.js", "QR Code", "Restaurant Management"],
-      type: "Web Development",
+      
+       {
+      title: "ideogram - idea hub",
+  description: "Ideogram is a collaborative idea-hub that enables users to post concepts, vote, and iterate. Built-in versioning, tagging, and AI-assisted tagging help teams discover and develop high-potential ideas.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      type: "Web Development", 
       status: "Live",
       links: {
-        demo: "#",
+        demo: "ideogram.svvaap.in",
         github: "#"
       }
     },
+
+     // android
+
     {
-      title: "AI-Powered Game",
-      description: "Unity-based game incorporating machine learning for intelligent NPC behavior and procedural content generation.",
+      title: "Food Delivery App",
+  description: "End-to-end food delivery platform with order management, real-time driver tracking, secure payments, and restaurant dashboards for menu and order flow control. Designed for scalability and low-latency updates.",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
+      technologies: ["java - Android studio",  "Firebase"],
+      type: "App Development",
+      status: "Live",
+      links: {
+        demo: "play.google.com/store/apps/details?id=com.svvaap.superdrop&hl=en_IN",
+        github: "#"
+      }
+    },
+   
+    {
+      title: "Book Catelogue App",
+  description: "BookHive is a mobile-first bookstore app featuring catalog browsing, secure checkout, cloud-managed media assets, and easy content management for administrators.",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
+      technologies: ["java - Android studio",  "Firebase", " cloudinary"],
+      type: "App Development",
+      status: "Live",
+      links: {
+        demo: "play.google.com/store/apps/details?id=com.svvaap.bookhive&hl=en_IN",
+        github: "#"
+      }
+    },
+    // game dev
+    {
+      title: "Animal Kingdom - 3D shooting Game",
+  description: "A 3D third-person shooter built in Unity with modular enemy AI, procedurally generated levels, and a persistent progression system. Focused on optimized mobile and desktop performance.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
-      technologies: ["Unity", "C#", "ML-Agents", "Procedural Generation"],
+      technologies: ["Unity", "C#"],
       type: "Game Development",
       status: "In Development",
       links: {
@@ -66,17 +133,30 @@ const Projects = () => {
       }
     },
     {
-      title: "Robotics Control System",
-      description: "Advanced robotics control system with computer vision integration for autonomous navigation and object recognition.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
-      technologies: ["Python", "OpenCV", "ROS", "Arduino", "Raspberry Pi"],
-      type: "Robotics",
-      status: "Research",
+      title: "NinjaKnights - 2D Game",
+  description: "NinjaKnights is a 2D action-platformer with tight combat, collectible systems, and spline-based level progression. Designed for addictive short-session gameplay with leaderboard integration.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
+      technologies: ["Unity", "C#"],
+      type: "Game Development",
+      status: "In Development",
       links: {
         demo: "#",
         github: "#"
       }
-    }
+    },
+    {
+      title: "car3d - car parkore game",
+  description: "car3d is a physics-driven driving game featuring parkour-style courses, collectible vehicles, drift mechanics, and competitive leaderboards. Built with reusable vehicle handling components and native input support.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
+      technologies: ["Unity", "C#"],
+      type: "Game Development",
+      status: "In Development",
+      links: {
+        demo: "#",
+        github: "#"
+      }
+    },
+
   ];
 
   const getStatusColor = (status: string) => {
@@ -87,6 +167,11 @@ const Projects = () => {
       default: return "bg-gray-500";
     }
   };
+
+  // Filters
+  const filters = ["All", "Web Development", "App Development", "Game Development"];
+  const [filter, setFilter] = useState<string>("All");
+  const filteredProjects = projects.filter(p => filter === "All" ? true : p.type === filter);
 
   return (
     <section id="projects" className="py-24 bg-muted/30">
@@ -101,29 +186,38 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Filter controls */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {filters.map(f => (
+            <Button
+              key={f}
+              size="sm"
+              variant={filter === f ? "default" : "outline"}
+              className={`racing-border font-professional ${filter === f ? "bg-accent text-accent-foreground" : ""}`}
+              onClick={() => setFilter(f)}
+            >
+              {f}
+            </Button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <Card 
               key={index}
               className="overflow-hidden hover-lift racing-border bg-card/50 backdrop-blur-sm animate-scale-in group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 flex items-center gap-2">
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
                   <Badge variant="secondary" className="font-professional text-xs">
                     {project.type}
                   </Badge>
-                  <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
-                  <span className="text-xs text-white font-professional">{project.status}</span>
+                  <div className="flex items-center gap-2">
+                    <div className={`w-2 h-2 rounded-full ${getStatusColor(project.status)}`}></div>
+                    <span className="text-xs text-muted-foreground font-professional">{project.status}</span>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="p-6">
                 <h3 className="font-racing font-bold text-xl mb-3 group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
@@ -168,14 +262,36 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
+          <a href="https://youtube.com/" target="_blank" rel="noreferrer">
+          <Button 
+            size="lg"
+            variant="outline" 
+            className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
+          >
+            <Play className="mr-2 h-5 w-5" />
+            Project Showcased On Youtube
+          </Button>
+          </a>
+          <a href="https://github.com/SrujanMoolya" target="_blank" rel="noreferrer">
+          <Button 
+            size="lg"
+            variant="outline" 
+            className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
+          >
+            <Github className="mr-2 h-5 w-5" />
+            View All Projects on GitHub
+          </Button>
+          </a>
+          <a href="https://www.producthunt.com/" target="_blank" rel="noreferrer">
           <Button 
             size="lg"
             variant="outline" 
             className="racing-border hover-lift font-professional font-semibold px-8 py-6"
           >
-            <Github className="mr-2 h-5 w-5" />
-            View All Projects on GitHub
+            <ExternalLink className="mr-2 h-5 w-5" />
+            Project On ProductHunt
           </Button>
+          </a>
         </div>
         
       </div>
