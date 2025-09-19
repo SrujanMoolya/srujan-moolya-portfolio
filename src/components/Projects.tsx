@@ -15,7 +15,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "createx.svvaap.in",
-        github: "#"
+        github: "https://github.com/SrujanMoolya/CreateX"
       }
     },
     {
@@ -27,7 +27,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "menucraft.in",
-        github: "#"
+        github: "https://github.com/svvaap/menucraft-ai"
       }
     },
     {
@@ -39,11 +39,11 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "jobhunt4u.in",
-        github: "#"
+        github: "https://github.com/svvaap/jobhunt4u"
       }
     },
        {
-      title: "PIM-Hostel Managemnt Syatem",
+      title: "PIM-Hostel Managemnt System",
   description: "Customized hostel management solution built for academic institutions — handles student allocation, fee management, attendance, and maintenance requests with role-based access for admins and staff.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS"],
@@ -51,7 +51,19 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "pimhostel.svvaap.in",
-        github: "#"
+        github: "https://github.com/SrujanMoolya/pim-hostel"
+      }
+    },
+    {
+      title: "BikeHub - bike rentel system",
+  description: "bike",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "pimhostel.svvaap.in",
+        github: "https://github.com/SrujanMoolya/pim-hostel"
       }
     },
      {
@@ -63,7 +75,42 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "mybustime.svvaap.in",
-        github: "#"
+        github: "https://github.com/svvaap/mybustime.in"
+      }
+    },
+    {
+      title: "UiBuilder - AI UI Generator",
+  description: "AI-powered idea-to-ui bulder that givers ui/ux design and xml code for android studio. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "https://uibuilder.svvaap.in",
+        github: "https://github.com/SrujanMoolya/uibuilder-ai"
+      }
+    },
+    {
+      title: "svvaap - Company Website",
+  description: "A sleek, modern company website for SVVAAP Technologies showcasing services, portfolio, team bios, and contact forms. Built with React and Tailwind CSS for a responsive, engaging user experience.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "svvaap.in",
+        github: "https://github.com/svvaap/svvaap-innovations"
+      }
+    },
+    {
+      title: "Travel Agency Website - client project",
+  description: "A dynamic travel agency platform with destination browsing, booking management, user reviews, and admin dashboards. Features advanced search filters, secure payment integration, and personalized recommendations.",
+      technologies: ["React.js", "PHP + SQL CRUD API", "Tailwind CSS", "cPanel Hosting"],
+      type: "Web Development", 
+      status: "Live",
+      links: {
+        demo: "https://shrideviprasadtravels.com",
+        github: "https://github.com/svvaap/ShriDeviPrasad-travel-web"
       }
     },
     {
@@ -75,7 +122,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "a2zpremiumdeals.com",
-        github: "#"
+        github: "https://github.com/SrujanMoolya"
       }
     },
       
@@ -88,7 +135,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "ideogram.svvaap.in",
-        github: "#"
+        github: "https://github.com/svvaap/ideogram"
       }
     },
 
@@ -103,7 +150,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "play.google.com/store/apps/details?id=com.svvaap.superdrop&hl=en_IN",
-        github: "#"
+        github: "https://github.com/SrujanMoolya"
       }
     },
    
@@ -116,7 +163,7 @@ const Projects = () => {
       status: "Live",
       links: {
         demo: "play.google.com/store/apps/details?id=com.svvaap.bookhive&hl=en_IN",
-        github: "#"
+        github: "https://github.com/SrujanMoolya/BookHive"
       }
     },
     // game dev
@@ -129,7 +176,7 @@ const Projects = () => {
       status: "In Development",
       links: {
         demo: "#",
-        github: "#"
+        github: "https://github.com/SrujanMoolya"
       }
     },
     {
@@ -141,7 +188,7 @@ const Projects = () => {
       status: "In Development",
       links: {
         demo: "#",
-        github: "#"
+        github: "https://github.com/SrujanMoolya"
       }
     },
     {
@@ -153,7 +200,7 @@ const Projects = () => {
       status: "In Development",
       links: {
         demo: "#",
-        github: "#"
+        github: "https://github.com/SrujanMoolya"
       }
     },
 

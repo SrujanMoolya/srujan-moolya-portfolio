@@ -25,7 +25,7 @@ const Experience = () => {
       type: "Internship",
       location: "Remote",
       duration: "Jan 2024 - Mar 2024",
-      description: "Gained hands-on experience in software development lifecycle and contributed to various client projects.",
+      description: "Gained hands-on experience in software development lifecycle and created Ecommerse websites using React.js and FakeStore APIs.",
       achievements: [
         "Built responsive web applications from scratch",
         "Integrated third-party APIs and payment gateways",
@@ -62,6 +62,27 @@ const Experience = () => {
     }
   ];
 
+  const hackathons = [
+    {
+      event: "Earn While Learn Hackathon",
+      year: 2024,
+      role: "Team Lead (Team5)",
+      rank: "1st Place",
+      prize: "Certificate & Campus Recognition",
+      description: "Built an end-to-end hostel management MVP that automated room allocation and maintenance requests — delivered a production-ready prototype within 36 hours.",
+      link: "#"
+    },
+    {
+      event: "State College DevSprint",
+      year: 2023,
+      role: "Full-stack Developer",
+      rank: "Top 5",
+      prize: "Mentorship & Internship Opportunity",
+      description: "Implemented a smart bus tracking prototype with real-time ETA and route analytics.",
+      link: "#"
+    }
+  ];
+
   return (
     <section id="experience" className="py-24">
       <div className="container mx-auto px-6">
@@ -73,6 +94,33 @@ const Experience = () => {
             Every great race car driver has a track record of victories. 
             Here's my championship history in the world of technology.
           </p>
+        </div>
+        
+        {/* Hackathons / Competitions */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-racing font-bold text-center mb-12">
+            Hackathons & <span className="text-accent">Competitions</span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {hackathons.map((h, idx) => (
+              <Card key={idx} className="p-6 racing-border hover-lift bg-card/50 backdrop-blur-sm">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h4 className="font-racing font-bold text-lg">{h.event} <span className="text-muted-foreground text-sm">({h.year})</span></h4>
+                    <p className="text-sm text-muted-foreground">{h.role} • <span className="font-semibold text-accent">{h.rank}</span></p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-professional text-sm text-muted-foreground">{h.prize}</p>
+                    {h.link && (
+                      <a href={h.link} className="text-accent font-professional text-sm" target="_blank" rel="noreferrer">View</a>
+                    )}
+                  </div>
+                </div>
+                <p className="text-muted-foreground font-professional text-sm leading-relaxed">{h.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Experience Section */}

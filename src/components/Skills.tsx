@@ -40,11 +40,7 @@ const Skills = () => {
       color: "bg-blue-500",
       items: ["React.js", "MERN Stack", "Tailwind CSS", "Next.js", "Firebase", "Supabase"]
     },
-    {
-      title: "Design",
-      color: "bg-pink-500",
-      items: ["Figma", "Canva", "Photoshop", "Adobe Illustrator"]
-    },
+    
     {
       title: "Game Development",
       color: "bg-purple-500",
@@ -53,12 +49,17 @@ const Skills = () => {
     {
       title: "Mobile Development",
       color: "bg-green-500",
-      items: ["Android Studio (Java/XML)", "Flutter"]
+      items: ["Android Studio (Java/XML)", "Flutter" , "React Native", "Firebase","SQLite",]
+    },
+    {
+      title: "Design",
+      color: "bg-pink-500",
+      items: ["Figma", "Canva", "Photoshop", "Adobe Illustrator" , "Adobe Animate","Blendr"]
     },
     {
       title: "Deployment",
       color: "bg-yellow-500",
-      items: ["Vercel", "Cpanel", "Play Store"]
+      items: ["Vercel", "Cpanel", "Play Store", "App Store", "Epic Games Store","Docker" ]
     },
     {
       title: "Version Control",

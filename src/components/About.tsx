@@ -51,9 +51,7 @@ const About = () => {
             About <span className="text-accent">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional leading-relaxed">
-            I'm a passionate software engineer with expertise spanning multiple domains. 
-            Like a Formula 1 driver who masters every aspect of racing, I've developed 
-            proficiency across the entire technology spectrum.
+           I'm a passionate software engineer with hands-on experience across multiple domains. Skilled in designing and developing user-friendly, scalable solutions, I continuously adapt to new technologies. Driven to contribute effectively and create real business impact.
           </p>
         </div>
 

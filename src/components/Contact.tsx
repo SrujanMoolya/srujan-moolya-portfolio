@@ -14,6 +14,7 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [sending, setSending] = useState(false);
 
   const contactInfo = [
     {
@@ -51,10 +52,46 @@ const Contact = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! I'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    // Honeypot check (if filled, likely bot)
+    const form = e.target as HTMLFormElement;
+    const honey = (form.querySelector("input[name='_honey']") as HTMLInputElement)?.value;
+    if (honey) {
+      // silently drop
+      return;
+    }
+
+    try {
+      setSending(true);
+      const fd = new FormData();
+      fd.append("name", formData.name);
+      fd.append("email", formData.email);
+      fd.append("subject", formData.subject || "Website Contact");
+      fd.append("message", formData.message);
+      // Disable formsubmit captcha and set a subject override
+      fd.append("_captcha", "false");
+      fd.append("_subject", `Website Contact: ${formData.subject || "New message"}`);
+
+      const res = await fetch("https://formsubmit.co/ajax/srujanmoolya21@gmail.com", {
+        method: "POST",
+        body: fd
+      });
+
+      const json = await res.json();
+      if (res.ok) {
+        toast.success("Message sent! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        console.error(json);
+        toast.error("Failed to send message. Please try again or email directly.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred while sending. Please try again later.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -85,6 +122,8 @@ const Contact = () => {
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot field for bots */}
+              <input type="text" name="_honey" style={{ display: 'none' }} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Input
@@ -204,6 +243,7 @@ const Contact = () => {
                   ))}
                 </div>
                 
+                <a href="/resume.pdf" target="_blank" rel="noreferrer">
                 <Button 
                   variant="outline" 
                   size="lg"
@@ -212,6 +252,7 @@ const Contact = () => {
                   <ExternalLink className="mr-2 h-5 w-5" />
                   Download Resume
                 </Button>
+                </a>
               </div>
             </Card>
           </div>
