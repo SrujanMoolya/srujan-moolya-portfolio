@@ -25,7 +25,7 @@ const Contact = () => {
     },
     {
       icon: Mail,
-      label: "Email", 
+      label: "Email",
       value: "SrujanMoolya3@gmail.com",
       href: "mailto:SrujanMoolya3@gmail.com"
     },
@@ -46,7 +46,7 @@ const Contact = () => {
     },
     {
       icon: Github,
-      label: "GitHub", 
+      label: "GitHub",
       href: "https://www.github.com/srvaaap",
       color: "hover:text-gray-900"
     }
@@ -109,7 +109,7 @@ const Contact = () => {
             Let's <span className="text-accent">Connect</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
-            Ready to bring innovation to your team? Let's discuss how my expertise 
+            Ready to bring innovation to your team? Let's discuss how my expertise
             can drive your organization to new heights.
           </p>
         </div>
@@ -120,14 +120,13 @@ const Contact = () => {
             <h3 className="font-racing font-bold text-2xl mb-6">
               Send a <span className="text-accent">Message</span>
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field for bots */}
               <input type="text" name="_honey" style={{ display: 'none' }} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Input
-                    name="name"
+                  <Input name="name"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
@@ -147,7 +146,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              
+
               <Input
                 name="subject"
                 placeholder="Subject"
@@ -156,7 +155,7 @@ const Contact = () => {
                 className="racing-border font-professional"
                 required
               />
-              
+
               <Textarea
                 name="message"
                 placeholder="Your Message"
@@ -165,9 +164,9 @@ const Contact = () => {
                 className="racing-border font-professional min-h-32"
                 required
               />
-              
-              <Button 
-                type="submit" 
+
+              <Button
+                type="submit"
                 size="lg"
                 className="w-full racing-border hover-lift font-professional font-semibold"
               >
@@ -175,6 +174,8 @@ const Contact = () => {
                 Send Message
               </Button>
             </form>
+            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="srujan-moolya" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/srujan-moolya?trk=profile-badge"><br /></a></div>
+
           </Card>
 
           {/* Contact Info & Social */}
@@ -183,7 +184,7 @@ const Contact = () => {
               <h3 className="font-racing font-bold text-2xl mb-6">
                 Get In <span className="text-accent">Touch</span>
               </h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center gap-4">
@@ -192,7 +193,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-professional font-medium">{info.label}</p>
-                      <a 
+                      <a
                         href={info.href}
                         className="text-muted-foreground hover:text-accent transition-colors font-professional"
                       >
@@ -202,7 +203,7 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-8 pt-8 border-t border-border">
                 <h4 className="font-professional font-semibold mb-4">Follow Me</h4>
                 <div className="flex gap-4">
@@ -225,33 +226,33 @@ const Contact = () => {
               <h3 className="font-racing font-bold text-2xl mb-6">
                 Career <span className="text-accent">Opportunities</span>
               </h3>
-              
+
               <div className="space-y-4">
                 <p className="font-professional text-muted-foreground">
                   I'm actively seeking opportunities with:
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {["FANG Companies", "AI Startups", "Gaming Studios", "Robotics Firms", "Tech Innovators"].map((type) => (
-                    <Badge 
+                    <Badge
                       key={type}
-                      variant="outline" 
+                      variant="outline"
                       className="racing-border font-professional"
                     >
                       {type}
                     </Badge>
                   ))}
                 </div>
-                
+
                 <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="w-full mt-6 racing-border hover-lift font-professional font-semibold"
-                >
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full mt-6 racing-border hover-lift font-professional font-semibold"
+                  >
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Download Resume
+                  </Button>
                 </a>
               </div>
             </Card>

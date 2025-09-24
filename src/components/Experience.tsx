@@ -63,15 +63,15 @@ const Experience = () => {
   ];
 
   const hackathons = [
-    {
-      event: "Earn While Learn Hackathon",
-      year: 2024,
-      role: "Team Lead (Team5)",
-      rank: "1st Place",
-      prize: "Certificate & Campus Recognition",
-      description: "Built an end-to-end hostel management MVP that automated room allocation and maintenance requests — delivered a production-ready prototype within 36 hours.",
-      link: "#"
-    },
+   {
+  "event": "Polkadot Hackathon",
+  "year": 2025,
+  "role": "Team Lead (In Progress)",
+  "rank": "Pending (Results in Dec 2025)",
+  "prize": "To be Announced",
+  "description": "Currently participating in the Polkadot Hackathon — building a blockchain-based solution leveraging Substrate and cross-chain communication. Leading the team through ideation, design, and MVP development phase. Submission scheduled for November 10, 2025.",
+  "link": "#"
+},
     {
       event: "State College DevSprint",
       year: 2023,
@@ -124,7 +124,7 @@ const Experience = () => {
         </div>
 
         {/* Experience Section */}
-        <div className="mb-20">
+        <div className="m-20">
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
             Work <span className="text-accent">Experience</span>
           </h3>

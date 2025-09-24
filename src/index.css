@@ -136,6 +136,8 @@ All colors MUST be HSL.
   .racing-border::after {
     content: '';
     @apply absolute inset-0 border-2 border-accent/0 transition-all duration-300;
+    /* Ensure the decorative overlay doesn't block clicks on interactive children */
+    pointer-events: none;
   }
   
   .racing-border:hover::after {
