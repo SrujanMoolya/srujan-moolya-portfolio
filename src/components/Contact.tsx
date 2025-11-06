@@ -222,40 +222,23 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-8 racing-border hover-lift bg-card/50 backdrop-blur-sm">
+            <Card className="p-8 racing-border hover-lift bg-card/50 backdrop-blur-sm text-center">
               <h3 className="font-racing font-bold text-2xl mb-6">
-                Career <span className="text-accent">Opportunities</span>
+                Download <span className="text-accent">Resume</span>
               </h3>
 
-              <div className="space-y-4">
-                <p className="font-professional text-muted-foreground">
-                  I'm actively seeking opportunities with:
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {["FANG Companies", "AI Startups", "Gaming Studios", "Robotics Firms", "Tech Innovators"].map((type) => (
-                    <Badge
-                      key={type}
-                      variant="outline"
-                      className="racing-border font-professional"
-                    >
-                      {type}
-                    </Badge>
-                  ))}
-                </div>
-
-                <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full mt-6 racing-border hover-lift font-professional font-semibold"
-                  >
-                    <ExternalLink className="mr-2 h-5 w-5" />
-                    Download Resume
-                  </Button>
-                </a>
-              </div>
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full racing-border hover-lift font-professional font-semibold"
+                >
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Download Resume
+                </Button>
+              </a>
             </Card>
+
           </div>
         </div>
       </div>

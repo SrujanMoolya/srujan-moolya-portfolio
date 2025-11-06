@@ -55,15 +55,28 @@ const Projects = () => {
       }
     },
     {
+  title: "Feel It Buy - E-commerce Platform",
+  description: "Full-stack e-commerce platform for electronics and furniture, built with the React js & Supabase. Features include secure payments with Razorpay, real-time order tracking via Socket.IO, AWS S3 image storage, admin dashboard, and JWT authentication for users and admins.",
+  image: "https://images.unsplash.com/photo-1607083206968-13611e3b4ecb?w=800&h=400&fit=crop",
+  technologies: ["React.js", "Node.js", "Express.js", "supabase", "Tailwind CSS", "Razorpay", "AWS S3", "Socket.IO"],
+  type: "Full Stack Web Development",
+  status: "In Progress",
+  links: {
+    demo: "feelitbuy.svvaap.in",
+    github: "https://github.com/SrujanMoolya/FeelItBuy"
+  }
+},
+
+    {
       title: "BikeHub - bike rentel system",
-  description: "bike",
+  description: "BikeHub is a superbike bike rental management system that streamlines reservations, Features user-friendly booking interfaces, real-time availability, and admin dashboards for efficient operations.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase", "Tailwind CSS"],
+      technologies: ["PHP", "MySql",],
       type: "Web Development", 
       status: "Live",
       links: {
-        demo: "pimhostel.svvaap.in",
-        github: "https://github.com/SrujanMoolya/pim-hostel"
+        demo: "",
+        github: "https://github.com/SrujanMoolya/bikehub"
       }
     },
      {
@@ -402,7 +415,7 @@ const Projects = () => {
             <img src="https://chipsyservices.com/wp-content/uploads/2024/09/Group-1.png" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Google" />
             <img src="https://assets.partnerfleet.app/variants/ksyfvjj1a6qrq7pmhq2q72rpgk2i/39cb74b2619edb3d629a9a72e177351c3a50e92488c1088f81e621fda9b2aff8" alt="" className="h-20 w-auto  hover:grayscale-0 transition bg-white rounded-full p-1" title="Meta" />
              <img src="https://www.cognizant.com/us/media_1808da395be9f77c0124de824530b0338915414a8.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Microsoft" />
-            <img src="https://polkadot.com/_next/static/media/polkadot-logo.0e1e2c79.png" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Apple" />
+            <img src="https://polkadot.com/_next/static/media/Polkadot_Logo_Pink-Black.250f0273.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Apple" />
             <img src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/497f6539-c32e-404a-9ec3-d0dd205f37cd.png" alt="" className="h-20 w-auto  hover:grayscale-0 transition" title="Tesla" />
             <img src="https://hirepro.in/wp-content/uploads/2025/05/HirePro-logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Netflix" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition bg-white rounded p-1" title="Amazon" />

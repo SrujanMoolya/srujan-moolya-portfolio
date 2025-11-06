@@ -42,15 +42,15 @@ const Experience = () => {
       institution: "poornaprajna Institute for Management",
       location: "Udupi, Karnataka",
       duration: "2024 - 2026",
-      percentage : "8.00",
+      percentage: "8.00",
       description: "Advanced studies in computer applications with focus on software development and emerging technologies."
     },
     {
       degree: "BCA (Bachelor of Computer Application)",
       institution: "St. Marys College",
-      location: "Shirva, Karnataka", 
+      location: "Shirva, Karnataka",
       duration: "2021 - 2024",
-        percentage : "8.04",
+      percentage: "8.04",
       description: "Comprehensive foundation in computer science principles and programming fundamentals."
     },
     {
@@ -63,24 +63,25 @@ const Experience = () => {
   ];
 
   const hackathons = [
-   {
-  "event": "Polkadot Hackathon",
-  "year": 2025,
-  "role": "Team Lead (In Progress)",
-  "rank": "Pending (Results in Dec 2025)",
-  "prize": "To be Announced",
-  "description": "Currently participating in the Polkadot Hackathon — building a blockchain-based solution leveraging Substrate and cross-chain communication. Leading the team through ideation, design, and MVP development phase. Submission scheduled for November 10, 2025.",
-  "link": "#"
-},
     {
-      event: "State College DevSprint",
-      year: 2023,
-      role: "Full-stack Developer",
-      rank: "Top 5",
-      prize: "Mentorship & Internship Opportunity",
-      description: "Implemented a smart bus tracking prototype with real-time ETA and route analytics.",
-      link: "#"
-    }
+      "event": "Polkadot Hackathon",
+      "year": 2025,
+      "role": "Team Lead (In Progress)",
+      "rank": "Pending (Results in Dec 2025)",
+      "prize": "To be Announced",
+      "description": "Currently participating in the Polkadot Hackathon — building a blockchain-based solution leveraging Substrate and cross-chain communication. Leading the team through ideation, design, and MVP development phase. Submission scheduled for November 10, 2025.",
+      "link": "#"
+    },
+    {
+      "event": "MumbaiHacks Hackathon",
+      "year": 2025,
+      "role": "Team Lead & Developer",
+      "rank": "Selected in final Round",
+      "prize": "To be Announced",
+      "description": "Currently participating in the MumbaiHacks Hackathon — developing an AI-powered web innovation under the 21xEngineers brand. Leading the team in ideation, UI/UX design, and full-stack prototype development. Final submission scheduled for November 28 & 29, 2025.",
+      "link": "https://devfolio.co/projects/ayudrishti-fbe0"
+    },
+
   ];
 
   return (
@@ -91,11 +92,11 @@ const Experience = () => {
             Professional <span className="text-accent">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
-            Every great race car driver has a track record of victories. 
+            Every great race car driver has a track record of victories.
             Here's my championship history in the world of technology.
           </p>
         </div>
-        
+
         {/* Hackathons / Competitions */}
         <div className="mt-20">
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
@@ -128,10 +129,10 @@ const Experience = () => {
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
             Work <span className="text-accent">Experience</span>
           </h3>
-          
+
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-8 hover-lift racing-border bg-card/50 backdrop-blur-sm animate-fade-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
@@ -145,11 +146,11 @@ const Experience = () => {
                         {exp.type}
                       </Badge>
                     </div>
-                    
+
                     <h5 className="font-professional font-semibold text-xl text-accent mb-3">
                       {exp.role}
                     </h5>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-4 text-muted-foreground mb-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />
@@ -181,9 +182,9 @@ const Experience = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, techIndex) => (
-                    <Badge 
+                    <Badge
                       key={techIndex}
-                      variant="secondary" 
+                      variant="secondary"
                       className="racing-border font-professional"
                     >
                       {tech}
@@ -200,10 +201,10 @@ const Experience = () => {
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
             Educational <span className="text-accent">Foundation</span>
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {education.map((edu, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 hover-lift racing-border bg-card/50 backdrop-blur-sm animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -213,7 +214,7 @@ const Experience = () => {
                   <h5 className="font-professional font-semibold text-accent mb-3">
                     {edu.institution}
                   </h5>
-                  
+
                   <div className="flex flex-col gap-2 text-muted-foreground mb-4">
                     <div className="flex items-center justify-center gap-2">
                       <Calendar className="h-4 w-4" />
