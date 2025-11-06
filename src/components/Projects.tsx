@@ -215,6 +215,15 @@ const Projects = () => {
     }
   };
 
+  // Normalize a URL: ensure it has a protocol. Returns empty string for falsy values.
+  const normalizeUrl = (u?: string) => {
+    if (!u) return "";
+    const trimmed = u.trim();
+    if (!trimmed) return "";
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed}`;
+  };
+
   // Filters
   const filters = ["All", "Web Development", "App Development", "Game Development"];
   const [filter, setFilter] = useState<string>("All");
@@ -286,22 +295,62 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-2">
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="flex-1 racing-border hover-lift font-professional"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="flex-1 racing-border hover-lift font-professional"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
+                  {(() => {
+                    const demoUrl = normalizeUrl(project.links?.demo);
+                    const githubUrl = normalizeUrl(project.links?.github);
+
+                    return (
+                      <>
+                        {demoUrl ? (
+                          <a href={demoUrl} target="_blank" rel="noreferrer" className="flex-1">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="w-full racing-border hover-lift font-professional"
+                            >
+                              <ExternalLink className="mr-2 h-4 w-4" />
+                              Demo
+                            </Button>
+                          </a>
+                        ) : (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            disabled
+                            className="flex-1 racing-border opacity-60 cursor-not-allowed font-professional"
+                            title="Demo not available"
+                          >
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Demo
+                          </Button>
+                        )}
+
+                        {githubUrl ? (
+                          <a href={githubUrl} target="_blank" rel="noreferrer" className="flex-1">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="w-full racing-border hover-lift font-professional"
+                            >
+                              <Github className="mr-2 h-4 w-4" />
+                              Code
+                            </Button>
+                          </a>
+                        ) : (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            disabled
+                            className="flex-1 racing-border opacity-60 cursor-not-allowed font-professional"
+                            title="Code not available"
+                          >
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                          </Button>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </Card>
@@ -350,15 +399,13 @@ const Projects = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-6 items-center">
             {/* Company logos - use reliable SVG/PNG URLs */}
-            <img src="https://chipsyservices.com/wp-content/uploads/2024/09/Group-1.png" alt="Google" className="h-10 w-auto grayscale hover:grayscale-0 transition" title="Google" />
-           
-            
-            <img src="https://assets.partnerfleet.app/variants/ksyfvjj1a6qrq7pmhq2q72rpgk2i/39cb74b2619edb3d629a9a72e177351c3a50e92488c1088f81e621fda9b2aff8" alt="Meta" className="h-20 w-auto grayscale hover:grayscale-0 transition bg-white rounded-full p-1" title="Meta" />
-             <img src="https://www.cognizant.com/us/media_1808da395be9f77c0124de824530b0338915414a8.svg" alt="Microsoft" className="h-10 w-auto grayscale hover:grayscale-0 transition" title="Microsoft" />
-            <img src="https://polkadot.com/_next/static/media/polkadot-logo.0e1e2c79.png" alt="Apple" className="h-10 w-auto grayscale hover:grayscale-0 transition" title="Apple" />
-            <img src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/497f6539-c32e-404a-9ec3-d0dd205f37cd.png" alt="Tesla" className="h-20 w-auto grayscale hover:grayscale-0 transition" title="Tesla" />
-            <img src="https://hirepro.in/wp-content/uploads/2025/05/HirePro-logo.svg" alt="Netflix" className="h-10 w-auto grayscale hover:grayscale-0 transition" title="Netflix" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-10 w-auto grayscale hover:grayscale-0 transition bg-white rounded p-1" title="Amazon" />
+            <img src="https://chipsyservices.com/wp-content/uploads/2024/09/Group-1.png" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Google" />
+            <img src="https://assets.partnerfleet.app/variants/ksyfvjj1a6qrq7pmhq2q72rpgk2i/39cb74b2619edb3d629a9a72e177351c3a50e92488c1088f81e621fda9b2aff8" alt="" className="h-20 w-auto  hover:grayscale-0 transition bg-white rounded-full p-1" title="Meta" />
+             <img src="https://www.cognizant.com/us/media_1808da395be9f77c0124de824530b0338915414a8.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Microsoft" />
+            <img src="https://polkadot.com/_next/static/media/polkadot-logo.0e1e2c79.png" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Apple" />
+            <img src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/497f6539-c32e-404a-9ec3-d0dd205f37cd.png" alt="" className="h-20 w-auto  hover:grayscale-0 transition" title="Tesla" />
+            <img src="https://hirepro.in/wp-content/uploads/2025/05/HirePro-logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Netflix" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition bg-white rounded p-1" title="Amazon" />
             <span className="text-2xl font-bold text-muted-foreground">...</span>
           </div>
         </div>
