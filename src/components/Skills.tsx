@@ -22,8 +22,6 @@ const IconFor = ({ name }: { name: string }) => {
       return <div className="text-sm font-bold">{key === 'typescript' ? 'TS' : 'JS'}</div>;
     case "unity":
       return <div className="text-sm">🎮</div>;
-    case "flutter":
-      return <div className="text-sm">🦋</div>;
     case "figma":
       return <div className="text-sm">🎨</div>;
     case "git":
@@ -91,10 +89,10 @@ const Skills = () => {
                 <div className={`w-3 h-3 rounded-full ${category.color} mr-3`}></div>
                 <h3 className="font-racing font-bold text-lg">{category.title}</h3>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
                 {category.items.map((item, itemIdx) => (
                   <div key={itemIdx} className="flex items-center justify-between bg-muted/20 p-2 rounded-lg">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1">
                       <div className="w-8 h-8 flex items-center justify-center text-accent">
                         <IconFor name={item} />
                       </div>
