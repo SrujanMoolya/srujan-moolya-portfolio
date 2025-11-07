@@ -97,35 +97,8 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Hackathons / Competitions */}
+ {/* Experience Section */}
         <div className="mt-20">
-          <h3 className="text-3xl font-racing font-bold text-center mb-12">
-            Hackathons & <span className="text-accent">Competitions</span>
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {hackathons.map((h, idx) => (
-              <Card key={idx} className="p-6 racing-border hover-lift bg-card/50 backdrop-blur-sm">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h4 className="font-racing font-bold text-lg">{h.event} <span className="text-muted-foreground text-sm">({h.year})</span></h4>
-                    <p className="text-sm text-muted-foreground">{h.role} • <span className="font-semibold text-accent">{h.rank}</span></p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-professional text-sm text-muted-foreground">{h.prize}</p>
-                    {h.link && (
-                      <a href={h.link} className="text-accent font-professional text-sm" target="_blank" rel="noreferrer">View</a>
-                    )}
-                  </div>
-                </div>
-                <p className="text-muted-foreground font-professional text-sm leading-relaxed">{h.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Experience Section */}
-        <div className="m-20">
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
             Work <span className="text-accent">Experience</span>
           </h3>
@@ -196,8 +169,37 @@ const Experience = () => {
           </div>
         </div>
 
+        {/* Hackathons / Competitions */}
+        <div className="mt-20">
+          <h3 className="text-3xl font-racing font-bold text-center mb-12">
+            Hackathons & <span className="text-accent">Competitions</span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {hackathons.map((h, idx) => (
+              <Card key={idx} className="p-6 racing-border hover-lift bg-card/50 backdrop-blur-sm">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h4 className="font-racing font-bold text-lg">{h.event} <span className="text-muted-foreground text-sm">({h.year})</span></h4>
+                    <p className="text-sm text-muted-foreground">{h.role} • <span className="font-semibold text-accent">{h.rank}</span></p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-professional text-sm text-muted-foreground">{h.prize}</p>
+                    {h.link && (
+                      <a href={h.link} className="text-accent font-professional text-sm" target="_blank" rel="noreferrer">View</a>
+                    )}
+                  </div>
+                </div>
+                <p className="text-muted-foreground font-professional text-sm leading-relaxed">{h.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+       
+
         {/* Education Section */}
-        <div>
+        <div className="mt-20">
           <h3 className="text-3xl font-racing font-bold text-center mb-12">
             Educational <span className="text-accent">Foundation</span>
           </h3>

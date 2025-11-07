@@ -7,7 +7,7 @@ import { useState } from "react";
 const Projects = () => {
   const projects = [
        {
-      title: "Createx - Idea to Code",
+      title: "Createx - Idea to Code Ai",
   description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
@@ -59,7 +59,7 @@ const Projects = () => {
   description: "Full-stack e-commerce platform for electronics and furniture, built with the React js & Supabase. Features include secure payments with Razorpay, real-time order tracking via Socket.IO, AWS S3 image storage, admin dashboard, and JWT authentication for users and admins.",
   image: "https://images.unsplash.com/photo-1607083206968-13611e3b4ecb?w=800&h=400&fit=crop",
   technologies: ["React.js", "Node.js", "Express.js", "supabase", "Tailwind CSS", "Razorpay", "AWS S3", "Socket.IO"],
-  type: "Full Stack Web Development",
+  type: "Web Development",
   status: "In Progress",
   links: {
     demo: "feelitbuy.svvaap.in",
