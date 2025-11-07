@@ -224,20 +224,39 @@ const Contact = () => {
 
             <Card className="p-8 racing-border hover-lift bg-card/50 backdrop-blur-sm text-center">
               <h3 className="font-racing font-bold text-2xl mb-6">
-                Download <span className="text-accent">Resume</span>
+                My <span className="text-accent">Resume</span>
               </h3>
 
-              <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full racing-border hover-lift font-professional font-semibold"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://srujanmoolya3.hackerresume.io/afbf0e4e-37df-4207-868d-8f1bff778857"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto"
                 >
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
-              </a>
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="w-full racing-border hover-lift font-professional font-semibold"
+                  >
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    View Resume
+                  </Button>
+                </a>
+
+                <a href="/srujan_resume.pdf" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full racing-border hover-lift font-professional font-semibold"
+                  >
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Download Resume
+                  </Button>
+                </a>
+              </div>
             </Card>
+
 
           </div>
         </div>
