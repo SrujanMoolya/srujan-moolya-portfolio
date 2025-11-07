@@ -42,7 +42,7 @@ const Skills = () => {
     {
       title: "Game Development",
       color: "bg-purple-500",
-      items: ["Unity", "Blender", "Unreal Engine 5", "Adobe Animate"]
+      items: ["Unity 3D", "Blender", "Unreal Engine 5", "Adobe Animate"]
     },
     {
       title: "Mobile Development",
