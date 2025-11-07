@@ -92,8 +92,7 @@ const Experience = () => {
             Professional <span className="text-accent">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
-            Every great race car driver has a track record of victories.
-            Here's my championship history in the world of technology.
+Every expert has a track record of achievements. Here's my journey of milestones and success in the world of technology.
           </p>
         </div>
 
