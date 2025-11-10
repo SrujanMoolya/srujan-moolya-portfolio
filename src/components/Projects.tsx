@@ -87,8 +87,8 @@ const Projects = () => {
       type: "Web Development", 
       status: "Live",
       links: {
-        demo: "mybustime.svvaap.in",
-        github: "https://github.com/svvaap/mybustime.in"
+        demo: "trackmybus.svvaap.in",
+        github: "https://github.com/svvaap/trackmybus.in"
       }
     },
     {
