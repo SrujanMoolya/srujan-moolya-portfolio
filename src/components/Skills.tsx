@@ -1,109 +1,86 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-// Minimal icon mapping (SVG or emoji fallback). Add more entries as needed.
-const IconFor = ({ name }: { name: string }) => {
-  const key = name.toLowerCase();
-  switch (key) {
-    case "react.js":
-    case "react":
-      return (
-        <svg className="h-6 w-6" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M64 76a12 12 0 100-24 12 12 0 000 24z" fill="#61DAFB"/>
-          <g stroke="#61DAFB" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-            <ellipse cx="64" cy="64" rx="36" ry="12"/>
-            <ellipse cx="64" cy="64" rx="36" ry="12" transform="rotate(60 64 64)"/>
-            <ellipse cx="64" cy="64" rx="36" ry="12" transform="rotate(120 64 64)"/>
-          </g>
-        </svg>
-      );
-    case "javascript":
-    case "typescript":
-      return <div className="text-sm font-bold">{key === 'typescript' ? 'TS' : 'JS'}</div>;
-    case "unity":
-      return <div className="text-sm">🎮</div>;
-    case "figma":
-      return <div className="text-sm">🎨</div>;
-    case "git":
-      return <div className="text-sm">🔧</div>;
-    default:
-      return <div className="text-sm">•</div>;
-  }
-};
-
 const Skills = () => {
-  const techStack = [
+  const skillGroups = [
     {
-      title: "Web Development",
-      color: "bg-blue-500",
-      items: ["React.js", "MERN Stack", "Tailwind CSS", "Next.js", "Firebase", "Supabase"]
-    },
-    
-    {
-      title: "Game Development",
-      color: "bg-purple-500",
-      items: ["Unity 3D", "Blender", "Unreal Engine 5", "Adobe Animate"]
+      title: "Full-Stack Engineering",
+      summary: "Production-grade web apps and APIs with clean architecture.",
+      items: ["React", "TypeScript", "Node.js", "PostgreSQL"],
     },
     {
       title: "Mobile Development",
-      color: "bg-green-500",
-      items: ["Android Studio (Java/XML)", "Flutter" , "React Native", "Firebase","SQLite",]
+      summary: "Cross-platform product delivery with app release workflows.",
+      items: ["React Native", "Android", "Firebase", "SQLite"],
     },
     {
-      title: "Design",
-      color: "bg-pink-500",
-      items: ["Figma", "Canva", "Photoshop", "Adobe Illustrator" , "Adobe Animate","Blendr"]
+      title: "Product & Design",
+      summary: "User-first interfaces with fast prototyping and iteration.",
+      items: ["Figma", "Tailwind CSS", "UX Systems", "Accessibility"],
     },
     {
-      title: "Deployment",
-      color: "bg-yellow-500",
-      items: ["Vercel", "Cpanel", "Play Store", "App Store", "Epic Games Store","Docker" ]
+      title: "Deployment & Quality",
+      summary: "Reliable shipping with testing, monitoring, and CI-friendly delivery.",
+      items: ["Vercel", "Docker", "GitHub", "QA"],
     },
-    {
-      title: "Version Control",
-      color: "bg-gray-700",
-      items: ["Git", "GitHub"]
-    }
+  ];
+
+  const coreStack = [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "React Native",
+    "Supabase",
+    "Docker",
+    "GitHub",
   ];
 
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 section-shell">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-racing font-bold mb-4">
             Technical <span className="text-accent">Skills</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-professional">
-            A concise overview of the technologies and tools I use across web, mobile, game, and design workflows.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-professional">
+            A focused snapshot of the stack I use to design, build, and ship software.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {techStack.map((category, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillGroups.map((group, index) => (
             <Card
               key={index}
-              className="p-6 hover-lift racing-border bg-card/50 backdrop-blur-sm animate-fade-up"
-              style={{ animationDelay: `${index * 0.12}s` }}
+              className="p-6 hover-lift border border-border bg-card/70 backdrop-blur-sm animate-fade-up"
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className="flex items-center mb-4">
-                <div className={`w-3 h-3 rounded-full ${category.color} mr-3`}></div>
-                <h3 className="font-racing font-bold text-lg">{category.title}</h3>
-              </div>
-              <div className="flex flex-col gap-1">
-                {category.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="flex items-center justify-between bg-muted/20 p-2 rounded-lg">
-                    <div className="flex items-center gap-1">
-                      <div className="w-8 h-8 flex items-center justify-center text-accent">
-                        <IconFor name={item} />
-                      </div>
-                      <div className="font-professional">{item}</div>
-                    </div>
-                    
-                  </div>
+              <h3 className="font-display font-bold text-xl mb-2">{group.title}</h3>
+              <p className="text-sm text-muted-foreground font-professional mb-4">
+                {group.summary}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <Badge key={item} variant="secondary" className="font-professional">
+                    {item}
+                  </Badge>
                 ))}
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-border bg-card/70 p-5">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-professional mb-3">
+            Core Stack
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {coreStack.map((item) => (
+              <Badge key={item} variant="outline" className="font-professional">
+                {item}
+              </Badge>
+            ))}
+          </div>
         </div>
 
       </div>

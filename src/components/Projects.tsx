@@ -40,20 +40,9 @@ const Projects = () => {
   ];
 
   const projects = [
+    
     {
-      title: "Createx - Idea to Code Ai",
-      description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "createx.svvaap.in",
-        github: "https://github.com/SrujanMoolya/CreateX"
-      }
-    },
-    {
-      title: "Digital Menu System [P.O.S]",
+      title: "Menucraft.in - Digital Menu System [P.O.S]",
       description: "Menucraft: a modern digital POS and menu management system with AI-assisted menu optimization, online ordering, and admin dashboard. Integrates website ordering with real-time inventory tracking and analytics.",
       image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "postgrdSql"],
@@ -65,7 +54,7 @@ const Projects = () => {
       }
     },
     {
-      title: "Job Portal Platform",
+      title: "Jobhunt4u.in - Job Portal Platform",
       description: "A full-featured job marketplace connecting candidates with recruiters. Includes intelligent matching, real-time chat, resume parsing, and advanced filtering to surface the best opportunities for both job seekers and employers.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
       technologies: ["React.js", "Node.js", "Firebase"],
@@ -89,18 +78,29 @@ const Projects = () => {
       }
     },
     {
-      title: "Feel It Buy - E-commerce Platform",
+      title: "FeelItBuy - E-commerce Platform",
       description: "Full-stack e-commerce platform for electronics and furniture, built with the React js & Supabase. Features include secure payments with Razorpay, real-time order tracking via Socket.IO, AWS S3 image storage, admin dashboard, and JWT authentication for users and admins.",
       image: "https://images.unsplash.com/photo-1607083206968-13611e3b4ecb?w=800&h=400&fit=crop",
       technologies: ["React.js", "Node.js", "Express.js", "supabase", "Tailwind CSS", "Razorpay", "AWS S3", "Socket.IO"],
       type: "Web Development",
       status: "In Progress",
       links: {
-        demo: "feelitbuy.svvaap.in",
-        github: "https://github.com/SrujanMoolya/FeelItBuy"
+        demo: "feelitbuy.com",
+       
       }
     },
-
+{
+      title: "Createx - Idea to Code Ai",
+      description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
+      type: "Web Development",
+      status: "Live",
+      links: {
+        demo: "createx.svvaap.in",
+        github: "https://github.com/SrujanMoolya/CreateX"
+      }
+    },
     {
       title: "BikeHub - bike rentel system",
       description: "BikeHub is a superbike bike rental management system that streamlines reservations, Features user-friendly booking interfaces, real-time availability, and admin dashboards for efficient operations.",
@@ -109,7 +109,7 @@ const Projects = () => {
       type: "Web Development",
       status: "Live",
       links: {
-        demo: "",
+        demo: "https://youtu.be/BUCDb59O5nE?si=_A4x0CwQVBrGVJ0-",
         github: "https://github.com/SrujanMoolya/bikehub"
       }
     },
@@ -125,71 +125,26 @@ const Projects = () => {
         github: "https://github.com/svvaap/trackmybus.in"
       }
     },
-    {
-      title: "UiBuilder - AI UI Generator",
-      description: "AI-powered idea-to-ui bulder that givers ui/ux design and xml code for android studio. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "https://uibuilder.svvaap.in",
-        github: "https://github.com/SrujanMoolya/uibuilder-ai"
-      }
-    },
-    {
-      title: "svvaap - Company Website",
-      description: "A sleek, modern company website for SVVAAP Technologies showcasing services, portfolio, team bios, and contact forms. Built with React and Tailwind CSS for a responsive, engaging user experience.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "svvaap.in",
-        github: "https://github.com/svvaap/svvaap-innovations"
-      }
-    },
-    {
-      title: "Travel Agency Website - client project",
-      description: "A dynamic travel agency platform with destination browsing, booking management, user reviews, and admin dashboards. Features advanced search filters, secure payment integration, and personalized recommendations.",
-      technologies: ["React.js", "PHP + SQL CRUD API", "Tailwind CSS", "cPanel Hosting"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "https://shrideviprasadtravels.com",
-        github: "https://github.com/svvaap/ShriDeviPrasad-travel-web"
-      }
-    },
-    {
-      title: "Real Estate Platform",
-      description: "A modern real-estate portal with searchable property listings, virtual tours, seller dashboards, and advanced filters for location, price, and amenities. Optimized for fast search and mobile-first browsing.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Firebase", "Tailwind CSS"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "a2zpremiumdeals.com",
-        github: "https://github.com/SrujanMoolya"
-      }
-    },
+    
+    
 
-    {
-      title: "ideogram - idea hub",
-      description: "Ideogram is a collaborative idea-hub that enables users to post concepts, vote, and iterate. Built-in versioning, tagging, and AI-assisted tagging help teams discover and develop high-potential ideas.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development",
-      status: "Live",
-      links: {
-        demo: "ideogram.svvaap.in",
-        github: "https://github.com/svvaap/ideogram"
-      }
-    },
+    // {
+    //   title: "ideogram - idea hub",
+    //   description: "Ideogram is a collaborative idea-hub that enables users to post concepts, vote, and iterate. Built-in versioning, tagging, and AI-assisted tagging help teams discover and develop high-potential ideas.",
+    //   image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
+    //   technologies: ["React.js", "Supabase", "Tailwind CSS"],
+    //   type: "Web Development",
+    //   status: "Live",
+    //   links: {
+    //     demo: "ideogram.svvaap.in",
+    //     github: "https://github.com/svvaap/ideogram"
+    //   }
+    // },
 
     // android
 
     {
-      title: "Food Delivery App",
+      title: "superdrop - Food Delivery App",
       description: "End-to-end food delivery platform with order management, real-time driver tracking, secure payments, and restaurant dashboards for menu and order flow control. Designed for scalability and low-latency updates.",
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
       technologies: ["java - Android studio", "Firebase"],
@@ -202,7 +157,7 @@ const Projects = () => {
     },
 
     {
-      title: "Book Catelogue App",
+      title: "Bookhive - Book Catelogue App",
       description: "BookHive is a mobile-first bookstore app featuring catalog browsing, secure checkout, cloud-managed media assets, and easy content management for administrators.",
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
       technologies: ["java - Android studio", "Firebase", " cloudinary"],
@@ -222,7 +177,7 @@ const Projects = () => {
       type: "Game Development",
       status: "In Development",
       links: {
-        demo: "#",
+        demo: "https://youtu.be/phN5X-O23eU?si=_zeBnOGI_I8oXf58",
         github: "https://github.com/SrujanMoolya"
       }
     },
@@ -234,7 +189,7 @@ const Projects = () => {
       type: "Game Development",
       status: "In Development",
       links: {
-        demo: "#",
+        demo: "https://youtu.be/Y0WIHQEQv9w?si=f1p2lKDPjvoe-H3q",
         github: "https://github.com/SrujanMoolya"
       }
     },
@@ -246,7 +201,7 @@ const Projects = () => {
       type: "Game Development",
       status: "In Development",
       links: {
-        demo: "#",
+        demo: "https://youtu.be/hnLtbrHregA?si=M745HFJo5YxlIxau",
         github: "https://github.com/SrujanMoolya"
       }
     },
@@ -448,7 +403,7 @@ const Projects = () => {
               Appreciated by engineers from
             </h3>
             <p className="text-sm md:text-base text-muted-foreground font-professional max-w-2xl mx-auto">
-              A fast-moving marquee of teams, startups, and technology brands connected to the work.
+               startups, and technology brands connected to the work.
             </p>
           </div>
 
