@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,45 +11,45 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* F1-inspired professional design system */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3%;
+    --background: 36 45% 98%;
+    --foreground: 220 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3%;
+    --card-foreground: 220 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 0 0% 3%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 220 28% 13%;
+    --primary-foreground: 35 60% 98%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 3%;
+    --secondary: 35 38% 92%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 35 36% 94%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 220 100% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 14 95% 52%;
+    --accent-foreground: 36 100% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 3%;
+    --border: 30 28% 84%;
+    --input: 30 28% 84%;
+    --ring: 14 95% 52%;
 
     --radius: 0.5rem;
 
     /* Racing-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(220 100% 50%), hsl(260 100% 60%));
-    --gradient-speed: linear-gradient(90deg, transparent, hsl(220 100% 50% / 0.3), transparent);
+    --gradient-primary: linear-gradient(140deg, hsl(220 28% 13%), hsl(218 22% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(14 95% 52%), hsl(36 98% 55%));
+    --gradient-speed: linear-gradient(90deg, transparent, hsl(14 95% 52% / 0.3), transparent);
 
     /* F1-inspired shadows */
-    --shadow-speed: 0 20px 40px -10px hsl(0 0% 0% / 0.1);
-    --shadow-lift: 0 10px 30px -5px hsl(0 0% 0% / 0.15);
-    --shadow-glow: 0 0 50px hsl(220 100% 50% / 0.4);
+    --shadow-speed: 0 20px 40px -10px hsl(220 28% 13% / 0.12);
+    --shadow-lift: 0 12px 30px -6px hsl(220 28% 13% / 0.16);
+    --shadow-glow: 0 0 50px hsl(14 95% 52% / 0.32);
 
     /* Animation timing - F1 precision */
     --transition-speed: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,7 +110,12 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-professional antialiased;
+    background-image:
+      radial-gradient(circle at 15% 15%, hsl(var(--accent) / 0.14), transparent 35%),
+      radial-gradient(circle at 85% 10%, hsl(220 28% 13% / 0.08), transparent 32%),
+      linear-gradient(0deg, hsl(var(--background)), hsl(var(--background)));
+    background-attachment: fixed;
   }
 
   html {
@@ -159,6 +166,16 @@ All colors MUST be HSL.
   .typing-cursor::after {
     content: '|';
     @apply text-accent animate-pulse;
+  }
+
+  .section-shell {
+    @apply relative;
+  }
+
+  .section-shell::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.24), transparent);
   }
 }
 
@@ -214,4 +231,31 @@ All colors MUST be HSL.
   50% {
     transform: translateY(-20px) rotate(2deg);
   }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.marquee-track {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }

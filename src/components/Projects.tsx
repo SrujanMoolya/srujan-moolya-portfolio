@@ -5,13 +5,47 @@ import { ExternalLink, Github, Play } from "lucide-react";
 import { useState } from "react";
 
 const Projects = () => {
+  const logoPartners = [
+    {
+      name: "Chipsy IT",
+      logo: "https://chipsyservices.com/wp-content/uploads/2024/09/Group-1.png",
+      className: "h-10",
+    },
+    
+    {
+      name: "Cognizant",
+      logo: "https://www.cognizant.com/us/media_1808da395be9f77c0124de824530b0338915414a8.svg",
+      className: "h-10",
+    },
+    {
+      name: "99Games",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNbuGZUjeoyI7PbQ4-Uiwl5RMq9ccB1PNZkQ&s",
+      className: "h-10",
+    },
+    {
+      name: "HirePro",
+      logo: "https://hirepro.in/wp-content/uploads/2025/05/HirePro-logo.svg",
+      className: "h-10",
+    },
+    {
+      name: "FeelItBuy",
+      logo: "https://feelitbuy.com/logo.png",
+      className: "h-14 bg-white rounded-xl p-2 shadow-sm",
+    },
+    {
+      name: "SVVAAP",
+      logo: "https://www.svvaap.in/assets/logo_dark-DGRfYr3V.png",
+      className: "h-10",
+    },
+  ];
+
   const projects = [
-       {
+    {
       title: "Createx - Idea to Code Ai",
-  description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
+      description: "AI-powered idea-to-code platform that translates user concepts into working front-end prototypes. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "createx.svvaap.in",
@@ -20,9 +54,9 @@ const Projects = () => {
     },
     {
       title: "Digital Menu System [P.O.S]",
-  description: "Menucraft: a modern digital POS and menu management system with AI-assisted menu optimization, online ordering, and admin dashboard. Integrates website ordering with real-time inventory tracking and analytics.",
+      description: "Menucraft: a modern digital POS and menu management system with AI-assisted menu optimization, online ordering, and admin dashboard. Integrates website ordering with real-time inventory tracking and analytics.",
       image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
-      technologies: ["React.js", "Supabase","postgrdSql"],
+      technologies: ["React.js", "Supabase", "postgrdSql"],
       type: "Web Development",
       status: "Live",
       links: {
@@ -32,7 +66,7 @@ const Projects = () => {
     },
     {
       title: "Job Portal Platform",
-  description: "A full-featured job marketplace connecting candidates with recruiters. Includes intelligent matching, real-time chat, resume parsing, and advanced filtering to surface the best opportunities for both job seekers and employers.",
+      description: "A full-featured job marketplace connecting candidates with recruiters. Includes intelligent matching, real-time chat, resume parsing, and advanced filtering to surface the best opportunities for both job seekers and employers.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
       technologies: ["React.js", "Node.js", "Firebase"],
       type: "Web Development",
@@ -42,12 +76,12 @@ const Projects = () => {
         github: "https://github.com/svvaap/jobhunt4u"
       }
     },
-       {
+    {
       title: "PIM-Hostel Managemnt System",
-  description: "Customized hostel management solution built for academic institutions — handles student allocation, fee management, attendance, and maintenance requests with role-based access for admins and staff.",
+      description: "Customized hostel management solution built for academic institutions — handles student allocation, fee management, attendance, and maintenance requests with role-based access for admins and staff.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "pimhostel.svvaap.in",
@@ -55,36 +89,36 @@ const Projects = () => {
       }
     },
     {
-  title: "Feel It Buy - E-commerce Platform",
-  description: "Full-stack e-commerce platform for electronics and furniture, built with the React js & Supabase. Features include secure payments with Razorpay, real-time order tracking via Socket.IO, AWS S3 image storage, admin dashboard, and JWT authentication for users and admins.",
-  image: "https://images.unsplash.com/photo-1607083206968-13611e3b4ecb?w=800&h=400&fit=crop",
-  technologies: ["React.js", "Node.js", "Express.js", "supabase", "Tailwind CSS", "Razorpay", "AWS S3", "Socket.IO"],
-  type: "Web Development",
-  status: "In Progress",
-  links: {
-    demo: "feelitbuy.svvaap.in",
-    github: "https://github.com/SrujanMoolya/FeelItBuy"
-  }
-},
+      title: "Feel It Buy - E-commerce Platform",
+      description: "Full-stack e-commerce platform for electronics and furniture, built with the React js & Supabase. Features include secure payments with Razorpay, real-time order tracking via Socket.IO, AWS S3 image storage, admin dashboard, and JWT authentication for users and admins.",
+      image: "https://images.unsplash.com/photo-1607083206968-13611e3b4ecb?w=800&h=400&fit=crop",
+      technologies: ["React.js", "Node.js", "Express.js", "supabase", "Tailwind CSS", "Razorpay", "AWS S3", "Socket.IO"],
+      type: "Web Development",
+      status: "In Progress",
+      links: {
+        demo: "feelitbuy.svvaap.in",
+        github: "https://github.com/SrujanMoolya/FeelItBuy"
+      }
+    },
 
     {
       title: "BikeHub - bike rentel system",
-  description: "BikeHub is a superbike bike rental management system that streamlines reservations, Features user-friendly booking interfaces, real-time availability, and admin dashboards for efficient operations.",
+      description: "BikeHub is a superbike bike rental management system that streamlines reservations, Features user-friendly booking interfaces, real-time availability, and admin dashboards for efficient operations.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["PHP", "MySql",],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "",
         github: "https://github.com/SrujanMoolya/bikehub"
       }
     },
-     {
+    {
       title: "TrackMyBus",
-  description: "TrackMyBus provides real-time bus location tracking, ETA predictions, and route notifications. Designed for low-bandwidth environments and includes driver sign-in, live ETA push notifications, and route analytics.",
+      description: "TrackMyBus provides real-time bus location tracking, ETA predictions, and route notifications. Designed for low-bandwidth environments and includes driver sign-in, live ETA push notifications, and route analytics.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "trackmybus.svvaap.in",
@@ -93,10 +127,10 @@ const Projects = () => {
     },
     {
       title: "UiBuilder - AI UI Generator",
-  description: "AI-powered idea-to-ui bulder that givers ui/ux design and xml code for android studio. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
+      description: "AI-powered idea-to-ui bulder that givers ui/ux design and xml code for android studio. Features natural language parsing for requirements, instant mock generation, and Supabase-powered persistence for iterative improvements.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS", "Ai api"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "https://uibuilder.svvaap.in",
@@ -105,10 +139,10 @@ const Projects = () => {
     },
     {
       title: "svvaap - Company Website",
-  description: "A sleek, modern company website for SVVAAP Technologies showcasing services, portfolio, team bios, and contact forms. Built with React and Tailwind CSS for a responsive, engaging user experience.",
+      description: "A sleek, modern company website for SVVAAP Technologies showcasing services, portfolio, team bios, and contact forms. Built with React and Tailwind CSS for a responsive, engaging user experience.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "svvaap.in",
@@ -117,9 +151,9 @@ const Projects = () => {
     },
     {
       title: "Travel Agency Website - client project",
-  description: "A dynamic travel agency platform with destination browsing, booking management, user reviews, and admin dashboards. Features advanced search filters, secure payment integration, and personalized recommendations.",
+      description: "A dynamic travel agency platform with destination browsing, booking management, user reviews, and admin dashboards. Features advanced search filters, secure payment integration, and personalized recommendations.",
       technologies: ["React.js", "PHP + SQL CRUD API", "Tailwind CSS", "cPanel Hosting"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "https://shrideviprasadtravels.com",
@@ -128,23 +162,23 @@ const Projects = () => {
     },
     {
       title: "Real Estate Platform",
-  description: "A modern real-estate portal with searchable property listings, virtual tours, seller dashboards, and advanced filters for location, price, and amenities. Optimized for fast search and mobile-first browsing.",
+      description: "A modern real-estate portal with searchable property listings, virtual tours, seller dashboards, and advanced filters for location, price, and amenities. Optimized for fast search and mobile-first browsing.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Firebase", "Tailwind CSS"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "a2zpremiumdeals.com",
         github: "https://github.com/SrujanMoolya"
       }
     },
-      
-       {
+
+    {
       title: "ideogram - idea hub",
-  description: "Ideogram is a collaborative idea-hub that enables users to post concepts, vote, and iterate. Built-in versioning, tagging, and AI-assisted tagging help teams discover and develop high-potential ideas.",
+      description: "Ideogram is a collaborative idea-hub that enables users to post concepts, vote, and iterate. Built-in versioning, tagging, and AI-assisted tagging help teams discover and develop high-potential ideas.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop",
       technologies: ["React.js", "Supabase", "Tailwind CSS"],
-      type: "Web Development", 
+      type: "Web Development",
       status: "Live",
       links: {
         demo: "ideogram.svvaap.in",
@@ -152,13 +186,13 @@ const Projects = () => {
       }
     },
 
-     // android
+    // android
 
     {
       title: "Food Delivery App",
-  description: "End-to-end food delivery platform with order management, real-time driver tracking, secure payments, and restaurant dashboards for menu and order flow control. Designed for scalability and low-latency updates.",
+      description: "End-to-end food delivery platform with order management, real-time driver tracking, secure payments, and restaurant dashboards for menu and order flow control. Designed for scalability and low-latency updates.",
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
-      technologies: ["java - Android studio",  "Firebase"],
+      technologies: ["java - Android studio", "Firebase"],
       type: "App Development",
       status: "Live",
       links: {
@@ -166,12 +200,12 @@ const Projects = () => {
         github: "https://github.com/SrujanMoolya"
       }
     },
-   
+
     {
       title: "Book Catelogue App",
-  description: "BookHive is a mobile-first bookstore app featuring catalog browsing, secure checkout, cloud-managed media assets, and easy content management for administrators.",
+      description: "BookHive is a mobile-first bookstore app featuring catalog browsing, secure checkout, cloud-managed media assets, and easy content management for administrators.",
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=400&fit=crop",
-      technologies: ["java - Android studio",  "Firebase", " cloudinary"],
+      technologies: ["java - Android studio", "Firebase", " cloudinary"],
       type: "App Development",
       status: "Live",
       links: {
@@ -182,7 +216,7 @@ const Projects = () => {
     // game dev
     {
       title: "Animal Kingdom - 3D shooting Game",
-  description: "A 3D third-person shooter built in Unity with modular enemy AI, procedurally generated levels, and a persistent progression system. Focused on optimized mobile and desktop performance.",
+      description: "A 3D third-person shooter built in Unity with modular enemy AI, procedurally generated levels, and a persistent progression system. Focused on optimized mobile and desktop performance.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
       technologies: ["Unity", "C#"],
       type: "Game Development",
@@ -194,7 +228,7 @@ const Projects = () => {
     },
     {
       title: "NinjaKnights - 2D Game",
-  description: "NinjaKnights is a 2D action-platformer with tight combat, collectible systems, and spline-based level progression. Designed for addictive short-session gameplay with leaderboard integration.",
+      description: "NinjaKnights is a 2D action-platformer with tight combat, collectible systems, and spline-based level progression. Designed for addictive short-session gameplay with leaderboard integration.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
       technologies: ["Unity", "C#"],
       type: "Game Development",
@@ -206,7 +240,7 @@ const Projects = () => {
     },
     {
       title: "car3d - car parkore game",
-  description: "car3d is a physics-driven driving game featuring parkour-style courses, collectible vehicles, drift mechanics, and competitive leaderboards. Built with reusable vehicle handling components and native input support.",
+      description: "car3d is a physics-driven driving game featuring parkour-style courses, collectible vehicles, drift mechanics, and competitive leaderboards. Built with reusable vehicle handling components and native input support.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
       technologies: ["Unity", "C#"],
       type: "Game Development",
@@ -250,7 +284,7 @@ const Projects = () => {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
-            A showcase of my engineering prowess across different domains, 
+            A showcase of my engineering prowess across different domains,
             each project representing a victory lap in technology innovation.
           </p>
         </div>
@@ -272,7 +306,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card 
+            <Card
               key={index}
               className="overflow-hidden hover-lift racing-border bg-card/50 backdrop-blur-sm animate-scale-in group"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -290,23 +324,23 @@ const Projects = () => {
                 <h3 className="font-racing font-bold text-xl mb-3 group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground font-professional mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
-                    <Badge 
+                    <Badge
                       key={techIndex}
-                      variant="outline" 
+                      variant="outline"
                       className="text-xs font-professional racing-border"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-2">
                   {(() => {
                     const demoUrl = normalizeUrl(project.links?.demo);
@@ -372,58 +406,76 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <a href="https://youtube.com/" target="_blank" rel="noreferrer">
-          <Button 
-            size="lg"
-            variant="outline" 
-            className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
-          >
-            <Play className="mr-2 h-5 w-5" />
-            Project Showcased On Youtube
-          </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
+            >
+              <Play className="mr-2 h-5 w-5" />
+              Project Showcased On Youtube
+            </Button>
           </a>
           <a href="https://github.com/SrujanMoolya" target="_blank" rel="noreferrer">
-          <Button 
-            size="lg"
-            variant="outline" 
-            className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
-          >
-            <Github className="mr-2 h-5 w-5" />
-            View All Projects on GitHub
-          </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="racing-border hover-lift font-professional font-semibold px-8 py-6 mr-4"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              View All Projects on GitHub
+            </Button>
           </a>
           <a href="https://www.producthunt.com/" target="_blank" rel="noreferrer">
-          <Button 
-            size="lg"
-            variant="outline" 
-            className="racing-border hover-lift font-professional font-semibold px-8 py-6"
-          >
-            <ExternalLink className="mr-2 h-5 w-5" />
-            Project On ProductHunt
-          </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="racing-border hover-lift font-professional font-semibold px-8 py-6"
+            >
+              <ExternalLink className="mr-2 h-5 w-5" />
+              Project On ProductHunt
+            </Button>
           </a>
         </div>
-        
+
       </div>
-      <div className="text-center mt-20">
-          <div className="mb-8">
-            <h3 className="text-2xl font-racing font-bold mb-4">
+      <div className="mt-20">
+        <div className="rounded-3xl border border-border bg-card/60 backdrop-blur-sm shadow-speed overflow-hidden">
+          <div className="px-6 pt-8 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-professional font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+              Trusted by builders
+            </div>
+            <h3 className="text-2xl md:text-3xl font-racing font-bold mb-2">
               Appreciated by engineers from
             </h3>
+            <p className="text-sm md:text-base text-muted-foreground font-professional max-w-2xl mx-auto">
+              A fast-moving marquee of teams, startups, and technology brands connected to the work.
+            </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 items-center">
-            {/* Company logos - use reliable SVG/PNG URLs */}
-            <img src="https://chipsyservices.com/wp-content/uploads/2024/09/Group-1.png" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Google" />
-            <img src="https://assets.partnerfleet.app/variants/ksyfvjj1a6qrq7pmhq2q72rpgk2i/39cb74b2619edb3d629a9a72e177351c3a50e92488c1088f81e621fda9b2aff8" alt="" className="h-20 w-auto  hover:grayscale-0 transition bg-white rounded-full p-1" title="Meta" />
-             <img src="https://www.cognizant.com/us/media_1808da395be9f77c0124de824530b0338915414a8.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Microsoft" />
-            <img src="https://polkadot.com/_next/static/media/Polkadot_Logo_Pink-Black.250f0273.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Apple" />
-            <img src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/497f6539-c32e-404a-9ec3-d0dd205f37cd.png" alt="" className="h-20 w-auto  hover:grayscale-0 transition" title="Tesla" />
-            <img src="https://hirepro.in/wp-content/uploads/2025/05/HirePro-logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition" title="Netflix" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="" className="h-10 w-auto  hover:grayscale-0 transition bg-white rounded p-1" title="Amazon" />
-            <span className="text-2xl font-bold text-muted-foreground">...</span>
+
+          <div className="relative marquee mt-8 pb-8">
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-card via-card/90 to-transparent z-10 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-card via-card/90 to-transparent z-10 pointer-events-none" />
+
+            <div className="marquee-track flex w-max items-center gap-10 px-6 py-4">
+              {[...logoPartners, ...logoPartners].map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="flex h-20 min-w-[160px] items-center justify-center rounded-2xl border border-border bg-background/70 px-6 shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                  title={partner.name}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className={`max-h-full max-w-full object-contain opacity-90 transition duration-300 hover:opacity-100 ${partner.className}`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
     </section>
-    
+
   );
 };
 

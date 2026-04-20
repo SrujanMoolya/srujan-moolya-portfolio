@@ -65,7 +65,8 @@ export default {
 			},
 			fontFamily: {
 				'racing': ['Orbitron', 'monospace'],
-				'professional': ['Inter', 'system-ui', 'sans-serif'],
+				'professional': ['Sora', 'sans-serif'],
+				'display': ['Space Grotesk', 'sans-serif'],
 			},
 			backgroundImage: {
 				'gradient-speed': 'var(--gradient-speed)',

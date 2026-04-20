@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Download, Mail } from "lucide-react";
+import { ChevronDown, Mail, Sparkles } from "lucide-react";
 import f1Car from "@/assets/f1-car.png";
 import motogpBike from "@/assets/motogp-bike.png";
 // Profile photo is used via public path in <img src="/profile-photo.png" ... />
@@ -13,11 +13,11 @@ const Hero = () => {
   
   const texts = [
     "Software Engineer",
-    "Web Developer",
-    "App Developer", 
-    "Game Developer",
-    "AI/ML Enthusiast",
-    "Robotics Explorer"
+    "Full-Stack Product Builder",
+    "Mobile App Developer",
+    "AI + Automation Enthusiast",
+    "Game Tech Explorer",
+    "Startup Collaborator"
   ];
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 section-shell">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
@@ -70,6 +70,10 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 text-center relative z-10">
           <div className="space-y-8 animate-fade-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-professional font-medium text-accent">
+              <Sparkles className="h-4 w-4" />
+              Open to internships, freelance, and full-time opportunities
+            </div>
             <div className="flex justify-center mb-4">
               <img
                 src="/srujanMoolya.jpg"
@@ -78,7 +82,7 @@ const Hero = () => {
               />
             </div>
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-racing font-bold tracking-wider">
+            <h1 className="text-5xl md:text-8xl font-racing font-bold tracking-wider leading-tight">
               SRUJAN
               <span className="block text-accent">MOOLYA</span>
             </h1>
@@ -90,15 +94,31 @@ const Hero = () => {
 
           <div className="max-w-2xl mx-auto">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-professional">
-              Building the future through code. Passionate about creating exceptional 
-              digital experiences that push the boundaries of technology.
+              I design and build products that move from idea to impact fast.
+              From scalable web apps to mobile experiences and AI-powered features,
+              I focus on clarity, speed, and measurable user value.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div className="rounded-xl border border-border bg-card/70 p-4">
+              <p className="font-display text-2xl font-bold text-accent">20+</p>
+              <p className="text-sm text-muted-foreground">Shipped Projects</p>
+            </div>
+            <div className="rounded-xl border border-border bg-card/70 p-4">
+              <p className="font-display text-2xl font-bold text-accent">5+</p>
+              <p className="text-sm text-muted-foreground">Tech Domains</p>
+            </div>
+            <div className="rounded-xl border border-border bg-card/70 p-4">
+              <p className="font-display text-2xl font-bold text-accent">2021</p>
+              <p className="text-sm text-muted-foreground">Started Building</p>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="racing-border hover-lift font-professional font-semibold px-8 py-6 text-lg"
+              className="racing-border hover-lift font-professional font-semibold px-8 py-6 text-lg bg-accent hover:bg-accent/90 text-accent-foreground"
               onClick={() => scrollToSection("projects")}
             >
               View My Work

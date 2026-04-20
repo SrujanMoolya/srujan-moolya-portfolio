@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Heart, ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -27,14 +29,14 @@ const Footer = () => {
               alt="Profile"
               className="w-12 h-12 rounded-full border-2 border-accent shadow object-cover"
             />
-            <div className="font-racing font-bold text-2xl tracking-wider">
+            <div className="font-display font-bold text-2xl tracking-wider">
               SM21<span className="text-accent">.</span>
             </div>
           </div>
           
           <p className="font-professional text-muted-foreground max-w-md">
-            Crafting the future of technology, one line of code at a time. 
-            Ready to accelerate innovation together.
+            Building practical, high-performance products with clean architecture,
+            thoughtful UX, and a builder mindset.
           </p>
           
           <div className="flex items-center gap-2 text-sm font-professional">
@@ -45,7 +47,7 @@ const Footer = () => {
           
           <div className="pt-6 border-t border-white/10 w-full">
             <p className="text-sm text-muted-foreground font-professional">
-              © 2024 Srujan Moolya. All rights reserved. | Ready for the next challenge.
+              © {currentYear} Srujan Moolya. All rights reserved. | Crafted for impact.
             </p>
           </div>
         </div>
