@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Globe, Play, PlayCircle } from "lucide-react";
 import { useState } from "react";
+import superdrop from "@/assets/superdrop.png";
+import bookhive from "@/assets/bookhive.jpg";
+import hostel from "@/assets/pim-hostel.png";
 
 const Projects = () => {
   const logoPartners = [
@@ -73,7 +76,7 @@ const Projects = () => {
       status: "Live",
       links: {
         project: "pimhostel.svvaap.in",
-        image: "https://i.imgur.com/1ZQZ1ZL.png",
+        previewImage:hostel,
         github: "https://github.com/SrujanMoolya/pim-hostel"
       }
     },
@@ -149,7 +152,7 @@ const Projects = () => {
       status: "Live",
       links: {
         project: "https://play.google.com/store/apps/details?id=com.svvaap.superdrop2",
-        previewImage: "https://srujanmoolya.svvaap.in/assets/superdrop.jpg",
+        previewImage: superdrop,
         github: "https://github.com/SrujanMoolya"
       }
     },
@@ -162,7 +165,7 @@ const Projects = () => {
       status: "Live",
       links: {
         project: "https://play.google.com/store/apps/details?id=com.svvaap.bookhive&hl=en_IN",
-        previewImage: "https://srujanmoolya/assets/bookhive.jpg",
+        previewImage: bookhive,
         github: "https://github.com/SrujanMoolya/BookHive"
       }
     },
@@ -219,6 +222,14 @@ const Projects = () => {
     if (!trimmed) return "";
     if (/^https?:\/\//i.test(trimmed)) return trimmed;
     return `https://${trimmed}`;
+  };
+
+  // Keep local asset paths intact (e.g. Vite imported images), and allow full URLs.
+  const resolvePreviewImage = (u?: string) => {
+    if (!u) return "";
+    const trimmed = u.trim();
+    if (!trimmed) return "";
+    return trimmed;
   };
 
   const getYouTubeEmbedUrl = (url: string) => {
@@ -290,7 +301,7 @@ const Projects = () => {
               {(() => {
                 const projectUrl = normalizeUrl(project.links?.project);
                 const videoUrl = normalizeUrl(project.links?.video);
-                const previewImage = normalizeUrl(project.links?.previewImage ?? project.links?.image);
+                const previewImage = resolvePreviewImage(project.links?.previewImage ?? project.links?.image);
                 const youtubeEmbed = videoUrl ? getYouTubeEmbedUrl(videoUrl) : "";
                 const isVideo = Boolean(youtubeEmbed);
 

@@ -228,21 +228,7 @@ const Contact = () => {
               </h3>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://srujanmoolya3.hackerresume.io/afbf0e4e-37df-4207-868d-8f1bff778857"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full sm:w-auto"
-                >
-                  <Button
-                    variant="default"
-                    size="lg"
-                    className="w-full racing-border hover-lift font-professional font-semibold"
-                  >
-                    <ExternalLink className="mr-2 h-5 w-5" />
-                    View Resume
-                  </Button>
-                </a>
+              
 
                 <a href="/srujan_resume.pdf" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
                   <Button
