@@ -42,7 +42,7 @@ const Header = () => {
                 className="w-10 h-10 rounded-full border-2 border-accent shadow-md object-cover"
               />
               <div className="font-display font-bold text-xl tracking-wider">
-                SM21<span className="text-accent">.</span>
+                SK21<span className="text-accent">.</span>
               </div>
             </div>
           

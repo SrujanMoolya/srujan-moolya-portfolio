@@ -30,7 +30,7 @@ const Footer = () => {
               className="w-12 h-12 rounded-full border-2 border-accent shadow object-cover"
             />
             <div className="font-display font-bold text-2xl tracking-wider">
-              SM21<span className="text-accent">.</span>
+              SK21<span className="text-accent">.</span>
             </div>
           </div>
           
