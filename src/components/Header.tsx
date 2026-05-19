@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,6 +57,9 @@ const Header = () => {
                 {item}
               </button>
             ))}
+            <Button asChild variant="outline" className="racing-border hover-lift">
+              <Link to="/gamedev">Game Dev</Link>
+            </Button>
             <Button
               onClick={() => scrollToSection("contact")}
               variant="outline"
