@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, ChevronDown, ExternalLink, Github, Mail, Gamepad2, PlayCircle, Sparkles } from "lucide-react";
 import f1Car from "@/assets/f1-car.png";
 import motogpBike from "@/assets/motogp-bike.png";
-import CrazyArcade from "@/assets/crazyarcade.png";
+import CrazyArcade from "@/assets/crazyArcade.png";
 import ArrowPuzzle from "@/assets/arrowpuzzle.png"
 
 const heroStats = [
