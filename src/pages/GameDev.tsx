@@ -18,7 +18,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Github, Mail, Gamepad2, PlayCircle, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import f1Car from "@/assets/f1-car.png";
 import motogpBike from "@/assets/motogp-bike.png";
 import CrazyArcade from "@/assets/crazyArcade.png";
@@ -215,6 +215,35 @@ type GalleryState = {
   index: number;
 };
 
+const useInView = (rootMargin = "240px") => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    if (!element || isInView) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [isInView, rootMargin]);
+
+  return { ref, isInView };
+};
+
 const GameDev = () => {
   const [selectedGallery, setSelectedGallery] = useState<GalleryState | null>(null);
 
@@ -362,9 +391,10 @@ const GameDev = () => {
                 const youtubeEmbed = getYouTubeEmbedUrl(projectLink);
                 const isVideo = Boolean(youtubeEmbed);
                 const carouselImages = project.galleryImages ?? [];
+                const { ref: cardRef, isInView } = useInView();
 
                 return (
-                  <Card key={project.title} className="overflow-hidden hover-lift border border-border bg-card/80 backdrop-blur-sm animate-scale-in group" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <Card ref={cardRef} key={project.title} className="overflow-hidden hover-lift border border-border bg-card/80 backdrop-blur-sm animate-scale-in group" style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className="relative border-b border-border bg-muted/50">
                       <div className="absolute top-3 left-3 z-10">
                         <Badge variant="secondary" className="font-professional text-xs bg-background/90 backdrop-blur-sm">
@@ -426,31 +456,39 @@ const GameDev = () => {
 
                       {carouselImages.length ? (
                         <div className="mb-4">
-                          <Carousel className="w-full" opts={{ align: "start", loop: false, containScroll: "trimSnaps" }}>
-                            <CarouselContent>
-                              {carouselImages.map((image, imageIndex) => (
-                                <CarouselItem key={image} className="basis-[88%] sm:basis-1/2 lg:basis-[42%]">
-                                  <button
-                                    type="button"
-                                    onClick={() => showGalleryImage(carouselImages, imageIndex, project.title)}
-                                    className="group relative block w-full overflow-hidden rounded-xl border border-border bg-muted/40"
-                                  >
-                                    <img
-                                      src={image}
-                                      alt={`${project.title} gallery ${imageIndex + 1}`}
-                                      className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                      loading="lazy"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-left text-xs text-white">
-                                      Tap to view full image
-                                    </div>
-                                  </button>
-                                </CarouselItem>
-                              ))}
-                            </CarouselContent>
-                            {carouselImages.length > 1 ? <CarouselPrevious /> : null}
-                            {carouselImages.length > 1 ? <CarouselNext /> : null}
-                          </Carousel>
+                          {isInView ? (
+                            <Carousel className="w-full" opts={{ align: "start", loop: false, containScroll: "trimSnaps" }}>
+                              <CarouselContent>
+                                {carouselImages.map((image, imageIndex) => (
+                                  <CarouselItem key={image} className="basis-[88%] sm:basis-1/2 lg:basis-[42%]">
+                                    <button
+                                      type="button"
+                                      onClick={() => showGalleryImage(carouselImages, imageIndex, project.title)}
+                                      className="group relative block w-full overflow-hidden rounded-xl border border-border bg-muted/40"
+                                    >
+                                      <img
+                                        src={image}
+                                        alt={`${project.title} gallery ${imageIndex + 1}`}
+                                        className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        loading="lazy"
+                                        decoding="async"
+                                        fetchPriority="low"
+                                      />
+                                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-left text-xs text-white">
+                                        Tap to view full image
+                                      </div>
+                                    </button>
+                                  </CarouselItem>
+                                ))}
+                              </CarouselContent>
+                              {carouselImages.length > 1 ? <CarouselPrevious /> : null}
+                              {carouselImages.length > 1 ? <CarouselNext /> : null}
+                            </Carousel>
+                          ) : (
+                            <div className="aspect-video w-full rounded-xl border border-dashed border-border bg-muted/30 animate-pulse flex items-center justify-center text-sm text-muted-foreground">
+                              Gallery loads on scroll
+                            </div>
+                          )}
                         </div>
                       ) : null}
 
