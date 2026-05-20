@@ -212,43 +212,7 @@ const GameDev = () => {
           <div className="absolute inset-0 speed-line opacity-20" />
         </section>
 
-        <section id="about" className="py-24 bg-muted/20 section-shell">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-professional font-medium text-accent mb-6">
-                <Gamepad2 className="h-4 w-4" />
-                Game Dev Snapshot
-              </div>
-              <h2 className="text-4xl md:text-5xl font-racing font-bold mb-5">
-                Why <span className="text-accent">Game Dev</span>
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
-                Same portfolio language, same styling system, same clarity. This page simply shifts the content toward game development.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card className="p-6 bg-card/90 border border-border shadow-speed hover-lift">
-                <h3 className="font-display text-xl font-bold mb-3">Game Focus</h3>
-                <p className="text-muted-foreground leading-relaxed font-professional">
-                  Gameplay systems, movement feel, AI behaviours, and technical polish across Unity projects.
-                </p>
-              </Card>
-              <Card className="p-6 bg-card/90 border border-border shadow-speed hover-lift">
-                <h3 className="font-display text-xl font-bold mb-3">Production Signal</h3>
-                <p className="text-muted-foreground leading-relaxed font-professional">
-                  Built with the same calm, structured hierarchy as the main portfolio so the experience feels consistent.
-                </p>
-              </Card>
-              <Card className="p-6 bg-card/90 border border-border shadow-speed hover-lift">
-                <h3 className="font-display text-xl font-bold mb-3">Target Roles</h3>
-                <p className="text-muted-foreground leading-relaxed font-professional">
-                  Game developer, gameplay programmer, Unity engineer, or product-minded technical collaborator.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
+       
 
         <section id="skills" className="py-24 section-shell">
           <div className="container mx-auto px-6">
