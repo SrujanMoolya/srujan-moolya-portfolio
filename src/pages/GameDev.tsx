@@ -3,7 +3,22 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, ChevronDown, ExternalLink, Github, Mail, Gamepad2, PlayCircle, Sparkles } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, ExternalLink, Github, Mail, Gamepad2, PlayCircle, Sparkles } from "lucide-react";
+import { useState } from "react";
 import f1Car from "@/assets/f1-car.png";
 import motogpBike from "@/assets/motogp-bike.png";
 import CrazyArcade from "@/assets/crazyArcade.png";
@@ -19,7 +34,7 @@ const skillGroups = [
   { label: "Game Engines", value: "Unity (2D & 3D), Unreal Engine 5" },
   { label: "Languages", value: "C#, Java, JavaScript, TypeScript, Python" },
   { label: "Game Design", value: "Level Design, Combat Loops, UI/UX" },
-  { label: "Tools", value: "Blender, Git, Android Studio, React Native" },
+  { label: "Tools", value: "Blender, Adobe Animator , Photoshop,  Git, Android Studio, React Native" },
 ];
 
 const projects = [
@@ -30,6 +45,23 @@ const projects = [
     status: "In Development",
     primaryLabel: "Watch",
     link: "https://youtu.be/phN5X-O23eU?si=_zeBnOGI_I8oXf58",
+    galleryImages: [
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-1.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-2.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-3.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-4.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-5.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-6.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-7.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-8.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-9.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-10.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-11.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-12.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-13.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-14.png",
+      "https://sen10games.in/img/TheAnimalKingdom/TheAnimalKingdom-15.png",
+    ],
   },
   {
     title: "NinjaKnights",
@@ -38,6 +70,17 @@ const projects = [
     status: "In Development",
     primaryLabel: "Watch",
     link: "https://youtu.be/Y0WIHQEQv9w?si=f1p2lKDPjvoe-H3q",
+    galleryImages: ["https://sen10games.in/img/NinjaKnights/ninjaKnight-1.jpg", 
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-2.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-3.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-4.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-5.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-6.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-7.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-8.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-9.jpg",
+      "https://sen10games.in/img/NinjaKnights/ninjaKnight-10.jpg"
+    ],
   },
   {
     title: "Car3D",
@@ -46,6 +89,35 @@ const projects = [
     status: "In Development",
     primaryLabel: "Watch",
     link: "https://youtu.be/hnLtbrHregA?si=M745HFJo5YxlIxau",
+    galleryImages: [
+      "https://sen10games.in/img/SuperCarRacing/supercar-1.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-2.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-3.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-4.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-5.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-6.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-7.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-8.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-9.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-10.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-11.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-12.jpg",
+      "https://sen10games.in/img/SuperCarRacing/supercar-13.jpg"
+     
+    ],
+  },
+   {
+    title: "SketchMan vs StickMan",
+    description: "Developed a 2D fighting game in Unity 2D, featuring intense battles between Sketchman and Stickman. Integrated multiplayer functionality using Photon Server, allowing players to compete online. Focused on smooth animations and responsive controls for an engaging gameplay experience.",
+    stack: ["Unity", "C#"],
+    status: "In Development",
+    primaryLabel: "Watch",
+    link: "https://youtu.be/pyhGmdBueRs?si=pN6rxhTAiT5HHR5K",
+    galleryImages: ["https://sen10games.in/img/sketchmanvsstickman/sketchmanvsstickman-1.jpg", 
+      "https://sen10games.in/img/sketchmanvsstickman/sketchmanvsstickman-2.jpg",
+      "https://sen10games.in/img/sketchmanvsstickman/sketchmanvsstickman-3.jpg",
+      "https://sen10games.in/img/sketchmanvsstickman/sketchmanvsstickman-4.jpg",
+    ],
   },
   {
     title: "Crazy Arcade",
@@ -128,7 +200,43 @@ const getYouTubeEmbedUrl = (url: string) => {
   return "";
 };
 
+const wireframeImages = [
+  "https://sen10games.in/img/wireframe/wrieframe2.jpg",
+  "https://sen10games.in/img/wireframe/wrieframe1.jpg",
+  "https://sen10games.in/img/wireframe/wrieframe5.jpg",
+  "https://sen10games.in/img/wireframe/wrieframe3.jpg",
+  "https://sen10games.in/img/wireframe/wrieframe4.jpg",
+  "https://sen10games.in/img/wireframe/wrieframe7.jpg",
+];
+
+type GalleryState = {
+  title: string;
+  images: string[];
+  index: number;
+};
+
 const GameDev = () => {
+  const [selectedGallery, setSelectedGallery] = useState<GalleryState | null>(null);
+
+  const selectedImage = selectedGallery ? selectedGallery.images[selectedGallery.index] : null;
+
+  const showGalleryImage = (gallery: string[], index: number, title: string) => {
+    if (!gallery.length) return;
+
+    const normalizedIndex = ((index % gallery.length) + gallery.length) % gallery.length;
+    setSelectedGallery({ title, images: gallery, index: normalizedIndex });
+  };
+
+  const showNextImage = () => {
+    if (!selectedGallery) return;
+    showGalleryImage(selectedGallery.images, selectedGallery.index + 1, selectedGallery.title);
+  };
+
+  const showPreviousImage = () => {
+    if (!selectedGallery) return;
+    showGalleryImage(selectedGallery.images, selectedGallery.index - 1, selectedGallery.title);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -250,9 +358,10 @@ const GameDev = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {projects.map((project, index) => {
                 const previewImage = resolvePreviewImage(project.title, project.previewImage);
-                const projectLink = typeof project.link === 'string' ? project.link : (project.link?.project || '');
+                const projectLink = project.link;
                 const youtubeEmbed = getYouTubeEmbedUrl(projectLink);
                 const isVideo = Boolean(youtubeEmbed);
+                const carouselImages = project.galleryImages ?? [];
 
                 return (
                   <Card key={project.title} className="overflow-hidden hover-lift border border-border bg-card/80 backdrop-blur-sm animate-scale-in group" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -315,6 +424,36 @@ const GameDev = () => {
                         ))}
                       </div>
 
+                      {carouselImages.length ? (
+                        <div className="mb-4">
+                          <Carousel className="w-full" opts={{ align: "start", loop: false, containScroll: "trimSnaps" }}>
+                            <CarouselContent>
+                              {carouselImages.map((image, imageIndex) => (
+                                <CarouselItem key={image} className="basis-[88%] sm:basis-1/2 lg:basis-[42%]">
+                                  <button
+                                    type="button"
+                                    onClick={() => showGalleryImage(carouselImages, imageIndex, project.title)}
+                                    className="group relative block w-full overflow-hidden rounded-xl border border-border bg-muted/40"
+                                  >
+                                    <img
+                                      src={image}
+                                      alt={`${project.title} gallery ${imageIndex + 1}`}
+                                      className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                      loading="lazy"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-left text-xs text-white">
+                                      Tap to view full image
+                                    </div>
+                                  </button>
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            {carouselImages.length > 1 ? <CarouselPrevious /> : null}
+                            {carouselImages.length > 1 ? <CarouselNext /> : null}
+                          </Carousel>
+                        </div>
+                      ) : null}
+
                       <div className="flex gap-2">
                         <a href={projectLink} target="_blank" rel="noreferrer" className="flex-1">
                           <Button size="sm" variant="outline" className="w-full racing-border hover-lift font-professional">
@@ -341,6 +480,38 @@ const GameDev = () => {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        <section id="wireframes" className="py-24 section-shell">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-racing font-bold mb-5">
+                Wireframe <span className="text-accent">Gallery</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
+                These are the wireframe and concept images from the previous portfolio, now included as part of the game portfolio.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {wireframeImages.map((image, index) => (
+                <Card key={image} className="overflow-hidden border border-border bg-card/80 backdrop-blur-sm hover-lift">
+                  <button
+                    type="button"
+                    onClick={() => showGalleryImage(wireframeImages, index, "Wireframe concept")}
+                    className="relative block aspect-video w-full overflow-hidden bg-muted/40"
+                  >
+                    <img
+                      src={image}
+                      alt={`Wireframe concept ${index + 1}`}
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                    />
+                  </button>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -419,6 +590,54 @@ const GameDev = () => {
             </div>
           </div>
         </section>
+
+        <Dialog open={Boolean(selectedGallery)} onOpenChange={(open) => !open && setSelectedGallery(null)}>
+          <DialogContent className="max-w-5xl border-border bg-background/95 p-0">
+            <DialogHeader className="sr-only">
+              <DialogTitle>Image preview</DialogTitle>
+              <DialogDescription>Full-size view of the selected project or wireframe image.</DialogDescription>
+            </DialogHeader>
+            {selectedGallery && selectedImage ? (
+              <div className="relative overflow-hidden rounded-lg bg-black">
+                <img
+                  src={selectedImage}
+                  alt={`${selectedGallery.title} preview ${selectedGallery.index + 1}`}
+                  className="max-h-[85vh] w-full object-contain bg-black"
+                />
+
+                {selectedGallery.images.length > 1 ? (
+                  <>
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      size="icon"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-background/90 text-foreground shadow-lg"
+                      onClick={showPreviousImage}
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                      <span className="sr-only">Previous image</span>
+                    </Button>
+
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      size="icon"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-background/90 text-foreground shadow-lg"
+                      onClick={showNextImage}
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                      <span className="sr-only">Next image</span>
+                    </Button>
+
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1 text-xs text-white">
+                      {selectedGallery.index + 1} / {selectedGallery.images.length}
+                    </div>
+                  </>
+                ) : null}
+              </div>
+            ) : null}
+          </DialogContent>
+        </Dialog>
       </main>
 
       <Footer />
