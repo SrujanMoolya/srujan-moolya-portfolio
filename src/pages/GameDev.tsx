@@ -172,6 +172,27 @@ const experience = [
   },
 ];
 
+const education: {
+  degree?: string;
+  institution?: string;
+  timeline?: string;
+  location?: string;
+  bullets?: string[];
+}[] = [
+  {
+    degree: "Master of Computer Applications (MCA)",
+    institution: "Poornaprajna Institute of Management (PIM), Udupi",
+    timeline: "2024 – 2026 (Expected)",
+    location: "Udupi",
+  },
+  {
+    degree: "Bachelor of Computer Applications (BCA)",
+    institution: "Mangalore university - St. Mary’s College, Shirva",
+    timeline: "2021 – 2024",
+    location: "Shirva",
+  },
+];
+
 const resolvePreviewImage = (title: string, previewImage?: string) => {
   if (previewImage) return previewImage;
   if (title === "Animal Kingdom") return f1Car;
@@ -265,6 +286,74 @@ const GameDev = () => {
     if (!selectedGallery) return;
     showGalleryImage(selectedGallery.images, selectedGallery.index - 1, selectedGallery.title);
   };
+
+  useEffect(() => {
+    const title = "Game Developer — Srujan Moolya | Unity, C#, Mobile Games";
+    const description =
+      "Portfolio of game development work by Srujan Moolya — Unity & C# projects, gameplay systems, 2D/3D titles, and mobile releases.";
+    const keywords = ["Game Developer", "Unity", "C#", "Game Design", "Mobile Games", "Portfolio", "Srujan Moolya"].join(", ");
+    const canonical = typeof window !== "undefined" ? window.location.href : "/gamedev";
+    const image = typeof window !== "undefined" ? `${window.location.origin}/srujanMoolya.jpg` : "/srujanMoolya.jpg";
+
+    document.title = title;
+
+    const upsertMeta = (attr: string, value: string, isProperty = false) => {
+      const selector = isProperty ? `meta[property=\"${attr}\"]` : `meta[name=\"${attr}\"]`;
+      let el = document.head.querySelector(selector) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement("meta");
+        if (isProperty) el.setAttribute("property", attr); else el.setAttribute("name", attr);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", value);
+    };
+
+    upsertMeta("description", description);
+    upsertMeta("keywords", keywords);
+    upsertMeta("og:title", title, true);
+    upsertMeta("og:description", description, true);
+    upsertMeta("og:type", "website", true);
+    upsertMeta("og:url", canonical, true);
+    upsertMeta("og:image", image, true);
+    upsertMeta("twitter:card", "summary_large_image");
+    upsertMeta("twitter:title", title);
+    upsertMeta("twitter:description", description);
+    upsertMeta("twitter:image", image);
+
+    let linkCanonical = document.head.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement("link");
+      linkCanonical.setAttribute("rel", "canonical");
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute("href", canonical);
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": title,
+      "description": description,
+      "url": canonical,
+      "image": image,
+      "author": {
+        "@type": "Person",
+        "name": "Srujan Moolya",
+        "url": typeof window !== "undefined" ? window.location.origin : undefined,
+      },
+    } as any;
+
+    let ldScript = document.head.querySelector("script[type='application/ld+json']") as HTMLScriptElement | null;
+    if (!ldScript) {
+      ldScript = document.createElement("script");
+      ldScript.setAttribute("type", "application/ld+json");
+      document.head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(jsonLd);
+
+    return () => {
+      // leave meta tags in place — no cleanup to preserve SEO for SPA navigations
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -588,6 +677,52 @@ const GameDev = () => {
                   </ul>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="education" className="py-24 section-shell">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-racing font-bold mb-5">
+                Education <span className="text-accent">Background</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-professional">
+                Your academic background and relevant coursework. Add entries to the `education` array in this file to populate this section.
+              </p>
+            </div>
+
+            <div className="grid gap-8">
+              {education.length ? (
+                education.map((item) => (
+                  <Card key={item.degree + item.institution} className="p-6 md:p-8 bg-card border border-border hover-lift">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
+                      <div>
+                        <h3 className="font-display text-2xl font-bold">{item.degree}</h3>
+                        <p className="mt-2 text-accent font-semibold">{item.institution}</p>
+                      </div>
+                      <div className="text-sm text-muted-foreground font-professional lg:text-right">
+                        <p>{item.timeline}</p>
+                        <p>{item.location}</p>
+                      </div>
+                    </div>
+                    {item.bullets ? (
+                      <ul className="space-y-3">
+                        {item.bullets.map((bullet) => (
+                          <li key={bullet} className="flex gap-3 text-muted-foreground font-professional leading-relaxed">
+                            <span className="mt-2 h-2 w-2 rounded-full bg-accent shrink-0" />
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </Card>
+                ))
+              ) : (
+                <Card className="p-8 racing-border hover-lift bg-card/50 backdrop-blur-sm text-center text-muted-foreground">
+                  <p className="text-lg">Education details not added yet. Update the education array in this file to show them.</p>
+                </Card>
+              )}
             </div>
           </div>
         </section>
